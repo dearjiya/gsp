@@ -147,7 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\doctest_usage\Day1\day_01.cpp" />
+    <ClCompile Include="..\doctest_usage\Reading\day_01.cpp" />
     <ClCompile Include="cplus_review.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
