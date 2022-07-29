@@ -17,7 +17,10 @@
     <ClCompile Include="cplus_review.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="..\doctest_usage\Reading\day_01.cpp">
+    <ClCompile Include="Reading\day_01.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\day_02.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,6 +8,10 @@ namespace foo {
 		}
 	}
 }
+namespace foo2
+{
+	int qux = 32;
+}
 
 namespace fbz = foo::bar::baz;
 
@@ -22,6 +26,8 @@ TEST_CASE("reading 01")
 
 	SUBCASE("using namespace")
 	{
+		auto rv = foo2::qux == 42;
+		CHECK(!rv);
 	}
 
 	SUBCASE("namespace alias")
@@ -33,53 +39,65 @@ TEST_CASE("reading 01")
 
 	SUBCASE("for")
 	{
-		int i, sum = 0;
-		for (i = 0; i < 10; i++)
+		int sum = 0;
+		for (int i = 0; i < 10; i++)
 		{
 			sum += i;
 		}
 		std::cout << "гую╨: " << sum << std::endl;
-		CHECK(sum == 19);
+		CHECK(sum == 45);
 	}
 
 	SUBCASE("while")
 	{
-		int i = 1, sum = 0;
+		int i = 1;
+		int sum = 0;
+
 		while (i <= 10)
 		{
 			sum += i;
 			i++;
 		}
 
-		CHECK(sum == 45);
-
+		CHECK(i == 11);
+		CHECK(sum == 55);
 	}
 
 	SUBCASE("if")
 	{
 		int num = 5;
 		bool result = false;
+
 		if (num == 5)
 		{
 			result = true;
+			CHECK(num == 5);
 		}
 		else
 		{
 			result = false;
+			CHECK(num != 5);
 		}
-		CHECK(result);
 
+		CHECK(result);
 	}
 
 	SUBCASE("switch")
 	{
-		int age = 30;
+		int age = 1;
 
 		switch (age)
 		{
 		case 1:
-
+			CHECK(age == 1);
+			break;
+		case 2:
+			CHECK(age == 2);
+			break;
+		default:
+			auto rv = age != 1 && age != 2;
+			CHECK(rv);
+			break;
 		}
-
 	}
 }
