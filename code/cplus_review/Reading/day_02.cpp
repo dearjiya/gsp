@@ -1,5 +1,7 @@
 #include <doctest/doctest.h>
 
+#include <iostream>
+
 namespace 
 {
 	void change_val(int* p) 
@@ -82,8 +84,61 @@ TEST_CASE("new delete")
 
 	SUBCASE("new로 할당한 메모리만 delete가 가능하다")
 	{
+		// 설명을 추가. 
+		
 		int a = 5;
-		delete& a;
+		// delete& a;
+	}
+
+	SUBCASE("int의 배열 할당과 사용")
+	{
+		// 사용법만 익힘 
+		// 아래를 CHECK를 사용하여 입력 없이 실행해 볼 수 있도록 수정한다. 
+
+		int arr_size;
+
+		std::cout << "array size : ";
+		std::cin >> arr_size;
+
+		int* list = new int[arr_size];
+
+		for (int i = 0; i < arr_size; i++) 
+		{
+			std::cin >> list[i];
+		}
+
+		for (int i = 0; i < arr_size; i++) 
+		{
+			std::cout << i << "th element of list : " << list[i] << std::endl;
+		}
+		delete[] list;
+	}
+
+	SUBCASE("클래스의 배열 할당과 사용")
+	{
+		// 클래스를 배운 다음에 확인
+
+	}
+
+	SUBCASE("Animal struct 다루기")
+	{
+
+		SUBCASE("struct의 c와 c++ 차이")
+		{
+			// c++에서 struct는 class와 동일하고 public인 점만 다르다
+
+		}
+
+		SUBCASE("create_animal")
+		{
+			// 함수 작성하고 호출 해보기
+
+		}
+
+		SUBCASE("play")
+		{
+			// 함수 작성하고 호출 해보기
+		}
 	}
 }
 
