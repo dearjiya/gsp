@@ -102,7 +102,7 @@ bool Date::IsLeapYear() const
 
 bool Date::IsValidDate()
 {
-
+	return true;
 }
 
 } // namespace review

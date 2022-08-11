@@ -13,6 +13,24 @@ namespace
 	{
 		p = 3;
 	}
+
+	int return_a()
+	{
+		int a = 2;
+		return a;
+	}
+
+	int& return_ref()
+	{
+		int a = 1;
+		return a;
+	}
+	int& return_var(int& a)
+	{
+		a = 5;
+		return a;
+	}
+
 }
 
 TEST_CASE("day 02")
@@ -72,17 +90,41 @@ TEST_CASE("day 02")
 
 	SUBCASE("레퍼런스에 대한 배열 - 안됨 검증")
 	{
-
+		int a = 1;
+		int b = 2;
+		//int& arr[2] = { a,b };
+		
 	}
 
 	SUBCASE("배열에 대한 레퍼런스 - 됨")
 	{
-
+		int arr[3] = { 1,2,3 };
+		int(&ref)[3] = arr;
+		ref[0] = 2;
+		ref[1] = 3;
+		ref[2] = 1;
+		CHECK(arr[0] == 2);
+		CHECK(arr[1] == 3);
+		CHECK(arr[2] == 1);
 	}
 
 	SUBCASE("레퍼런스를 리턴하는 함수는 어색하지만 클래스 멤버함수는 일반적이다.")
 	{
+		// 참조자 아닌 값 리턴
+		int b = return_a();
+		// 지역변수의 레퍼런스를 리턴 -> segmentation fault 발생되지 않고 복사 잘됨?
+		int ref = return_ref();
+		ref = 3;
+		int c = 5;
+		// 외부변수의 레퍼런스를 리턴
+		int var = return_var(c);
+		// 참조자가 아닌 값을 리턴하는 함수를 참조자로 받기
+		const int& func_ref = return_a();
 
+		CHECK(b == 2);
+		CHECK(ref == 3);
+		CHECK(var == 5);
+		CHECK(func_ref == 2);
 	}
 }
 
