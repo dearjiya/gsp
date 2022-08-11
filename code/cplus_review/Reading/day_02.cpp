@@ -46,12 +46,28 @@ TEST_CASE("day 02")
 
 	SUBCASE("pointer can change pointing address of the variable")
 	{
-		// 바꾸기 해보기 
+		// p는 a를 가리키는지 확인
+		// p가 a말고 b를 가리키는지 확인
+		int a = 10;
+		int* p = &a;
+		CHECK(*p == 10);
+
+		int b = 3;
+		p = &b;
+		CHECK(*p == 3);
 	}
 
 	SUBCASE("여러가지 참조자 예시들 검사하기")
 	{
+		int x = 1;
+		int& y = x;
+		int& z = y;
+		y = 2;
+		z = 3;
 
+		CHECK(x == 3);
+		CHECK(y == 3);
+		CHECK(z == 3);
 	}
 
 	SUBCASE("레퍼런스에 대한 배열 - 안됨 검증")
@@ -95,7 +111,7 @@ TEST_CASE("new delete")
 		// 사용법만 익힘 
 		// 아래를 CHECK를 사용하여 입력 없이 실행해 볼 수 있도록 수정한다. 
 
-		int arr_size;
+		/*int arr_size;
 
 		std::cout << "array size : ";
 		std::cin >> arr_size;
@@ -111,7 +127,7 @@ TEST_CASE("new delete")
 		{
 			std::cout << i << "th element of list : " << list[i] << std::endl;
 		}
-		delete[] list;
+		delete[] list;*/
 	}
 
 	SUBCASE("클래스의 배열 할당과 사용")

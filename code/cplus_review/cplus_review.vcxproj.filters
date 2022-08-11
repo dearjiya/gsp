@@ -23,5 +23,19 @@
     <ClCompile Include="Reading\day_02.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
+    <ClCompile Include="Reading\day_03.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\Date.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\day_04.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Reading\Date.hpp">
+      <Filter>Reading</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
