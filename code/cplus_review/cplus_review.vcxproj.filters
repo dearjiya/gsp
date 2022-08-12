@@ -32,6 +32,27 @@
     <ClCompile Include="Reading\day_04.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
+    <ClCompile Include="Reading\destructor.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\copy_constructor.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\initializer_list.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\class_const_static_member.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\string_class.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\explict_mutable.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\operator_overloading.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp">

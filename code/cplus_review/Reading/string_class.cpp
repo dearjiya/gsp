@@ -8,58 +8,139 @@ namespace jiya
 class string
 {
 public:
-	char* string_content;
-	int string_length;
+	string()
+		: content_{nullptr}
+		, length_{0}
+		, memory_capacity{0}
+	{
+	}
 
 	string(char c)
 	{
-		string_content = new char[1];
-		string_content[0] = c;
-		string_length = 1;
+		content_ = new char[2];
+		content_[0] = c;
+		content_[1] = '\0'; // invariant - 끝에 널문자가 있다.
+		length_ = 1;
+		memory_capacity = 1;
 	}
 
-	string(char* cs)
+	string(const char* cs)
 	{
-		string_length = strlen(cs);
-		string_content = new char[string_length]();
-		for (int i = 0; i < string_length; i++)
+		length_ = strlen(cs);
+		content_ = new char[length_+1]();
+		for (int i = 0; i < length_; i++)
 		{
-			string_content[i] = cs[i];
+			content_[i] = cs[i];
 		}
-	}
-	string(const char* str)
-	{
-		string_length = strlen(str);
-		string_content = new char[string_length]();
-		for (int i = 0; i < string_length; i++)
-		{
-			string_content[i] = str[i];
-		}
+		content_[length_] = '\0';
+		memory_capacity = length_;
 	}
 
-	int len() const
+	string(const jiya::string& str)
+		: string(str.content_)
 	{
-		return string_length;
+	}
+
+	~string()
+	{
+		delete[] content_;
+	}
+
+	size_t len() const
+	{
+		return length_;
+	}
+
+	int capacity() const
+	{
+		return memory_capacity;
 	}
 	
-	char* GetValue()
+	const char* c_str() const
 	{
-		char* tmp = new char[string_length];
-		std::cout << "leng" << string_length;
-		for (int i = 0; i < string_length; i++)
-		{
-			tmp[i] = string_content[i];
-		}
-		return tmp;
+		return content_;
 	}
 
-	void print()
+	void print() const
 	{
-		for (int i = 0; i != string_length; i++)
-		{
-			std::cout << string_content[i];
-		}
+		std::cout << content_;
+		std::cout << std::endl;
 	}
+
+	bool operator==(const string& rhs) const
+	{
+		return strcmp(content_, rhs.content_) == 0;
+	}
+
+	char* append(const char* str)
+	{
+		size_t length_sum = length_ + strlen(str);
+		char* res = new char[length_sum + 1]();
+		int j = 0;
+		for (int i = 0; i < length_sum; i++)
+		{
+			if (i < length_) 
+			{
+				res[i] = content_[i];
+			}
+			else
+			{
+				res[i] = str[j];
+				j++;
+			}
+		}
+		res[length_sum] = '\0';
+		
+		return res;
+	}
+
+	string& assign(const string& str)
+	{
+		if (str.length_ > memory_capacity)
+		{
+			delete[] content_;
+			content_ = new char[str.length_ + 1];
+			memory_capacity = str.length_;
+		}
+		for (int i = 0; i < str.length_; i++)
+		{
+			content_[i] = str.content_[i];
+		}
+		content_[str.length_] = '\0';
+		length_ = str.length_;
+		return *this;
+	}
+
+	char at(int i) const
+	{
+		if (i > length_ || i < 0)
+		{
+			return NULL;
+		}
+		else
+			return content_[i];
+	}
+
+	string& insert(int loc, const string& str)
+	{
+		if (loc < 0 || loc > length_)
+		{
+			return *this;
+		}
+		if (length_ + str.length_ > memory_capacity)
+		{
+			memory_capacity = length_ + str.length_;
+
+			char* prev_content_ = content_;
+			content_ = new char[memory_capacity];
+		}
+
+	}
+
+private:
+	char* content_;
+	size_t length_;
+	int memory_capacity;
 };
 
 } // namespace jiya
@@ -102,13 +183,47 @@ TEST_CASE("string class")
 	}
 
 	SUBCASE("나만의 string 클래스 만들기")
-	{
+	{ 
 		SUBCASE("단위 테스트 1")
 		{
 			jiya::string str("hello world");
 			jiya::string str2(str);
-			auto tmp = str2.GetValue();
-			// 
+
+			auto tmp = str2.c_str();
+		}
+		SUBCASE("단위 테스트 2 - operatio==")
+		{
+			jiya::string str("hello");
+			jiya::string str2("hello");
+
+			CHECK(str == str2);
+		}
+
+		SUBCASE("단위 테스트 3 - append")
+		{
+			// tmp를 str의 자리에 재할당 시키는 방법
+			jiya::string str("hello");
+			jiya::string str2(" world");
+			auto tmp = str.append(str2.c_str());
+			//std::cout << "append: " << tmp; 
+		}
+
+		SUBCASE("단위 테스트 4 - assign")
+		{
+			jiya::string str{ "hello" };
+			jiya::string str2{ "world" };
+			//str.print();
+			jiya::string& s = str.assign(str2);
+
+			//str.print();
+		}
+
+		SUBCASE("단위 테스트 5 - at")
+		{
+			jiya::string str{ "helloworld" };
+
+			str.print();
+			std::cout << "at: " << str.at(3);
 		}
 	}
 }

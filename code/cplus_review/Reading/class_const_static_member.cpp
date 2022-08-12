@@ -89,7 +89,7 @@ TEST_CASE("class_const_static_member")
 	{
 		SUBCASE("..")
 		{
-
+		
 		}
 	}
 }
