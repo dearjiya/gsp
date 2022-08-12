@@ -1,6 +1,8 @@
 #include <doctest/doctest.h>
 
 #include <string>
+#include <memory>
+#include <iostream>
 
 namespace
 {
@@ -34,7 +36,24 @@ TEST_CASE("operator overloading")
 			CHECK(is_same);
 		}
 
-			
+		/**
+		 * std::string
+		 */
+		SUBCASE("std::string")
+		{
+			std::string s{ "한글" };
+
+			std::cout << s << std::endl;
+		}
+
+		/**
+		 * std::wstring은 UNICODE16LE 형식을 사용한다. 
+		 */
+		SUBCASE("std::wstring")
+		{
+			std::wstring w1{ L"한글" };
+			std::wstring w2{ L"World" };
+		}
 	}
 
 	/**

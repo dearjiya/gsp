@@ -157,6 +157,7 @@
     <ClCompile Include="Reading\day_04.cpp" />
     <ClCompile Include="Reading\destructor.cpp" />
     <ClCompile Include="Reading\explict_mutable.cpp" />
+    <ClCompile Include="Reading\inheritance.cpp" />
     <ClCompile Include="Reading\initializer_list.cpp" />
     <ClCompile Include="Reading\operator_overloading.cpp" />
     <ClCompile Include="Reading\string_class.cpp" />

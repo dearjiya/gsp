@@ -53,6 +53,9 @@
     <ClCompile Include="Reading\operator_overloading.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
+    <ClCompile Include="Reading\inheritance.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp">

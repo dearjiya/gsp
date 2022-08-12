@@ -9,9 +9,9 @@ class string
 {
 public:
 	string()
-		: content_{nullptr}
-		, length_{0}
-		, memory_capacity{0}
+		: content_{ nullptr }
+		, length_{ 0 }
+		, memory_capacity{ 0 }
 	{
 	}
 
@@ -27,7 +27,7 @@ public:
 	string(const char* cs)
 	{
 		length_ = strlen(cs);
-		content_ = new char[length_+1]();
+		content_ = new char[length_ + 1]();
 		for (int i = 0; i < length_; i++)
 		{
 			content_[i] = cs[i];
@@ -55,7 +55,7 @@ public:
 	{
 		return memory_capacity;
 	}
-	
+
 	const char* c_str() const
 	{
 		return content_;
@@ -79,7 +79,7 @@ public:
 		int j = 0;
 		for (int i = 0; i < length_sum; i++)
 		{
-			if (i < length_) 
+			if (i < length_)
 			{
 				res[i] = content_[i];
 			}
@@ -90,7 +90,7 @@ public:
 			}
 		}
 		res[length_sum] = '\0';
-		
+
 		return res;
 	}
 
@@ -111,6 +111,23 @@ public:
 		return *this;
 	}
 
+	void reserve(int size)
+	{
+		if (size > memory_capacity)
+		{
+			char* prev_content_ = content_;
+			content_ = new char[size];
+			memory_capacity = size;
+
+			for (int i = 0; i < length_; i++)
+			{
+				content_[i] = prev_content_[i];
+			}
+
+			delete[] prev_content_;
+		}
+	}
+
 	char at(int i) const
 	{
 		if (i > length_ || i < 0)
@@ -127,13 +144,52 @@ public:
 		{
 			return *this;
 		}
+
 		if (length_ + str.length_ > memory_capacity)
 		{
 			memory_capacity = length_ + str.length_;
-
 			char* prev_content_ = content_;
-			content_ = new char[memory_capacity];
+			content_ = new char[memory_capacity + 1];
+
+			int i;
+			for (i = 0; i < loc; i++)
+			{
+				content_[i] = prev_content_[i];
+			}
+			for (int j = 0; j < str.length_; j++)
+			{
+				content_[i + j] = str.content_[j];
+			}
+			for (; i < length_; i++)
+			{
+				content_[str.length_ + i] = prev_content_[i];
+			}
+			delete[] prev_content_;
+			length_ = length_ + str.length_;
+			return *this;
 		}
+		// 동적할당이 필요없는 경우 추가하기
+	}
+
+	string& erase(int loc, int num) 
+	{
+		if (num < 0 || loc < 0 || loc > length_)
+		{
+			return *this;
+		}
+
+		for (int i = loc + num; i < length_; i++)
+		{
+			content_[i - num] = content_[i];
+		}
+
+		length_ = length_ - num;
+
+		return *this;
+	}
+
+	int find(const string& str) const
+	{
 
 	}
 
@@ -146,12 +202,12 @@ private:
 } // namespace jiya
 
 /**
- * 문자열은 오랫동안 프로그래머들이 제대로 해결하지 못 했던 문제이고 
- * 유니코드 표준화와 이를 지원하는 라이브러리들이 안정될 때까지 
- * 기다려야 했고, 이제는 어느 정도 확정되었으나 몇 가지 영역에서 
- * 이전의 개념들과 섞여 있다. 
- * 
- * 리눅스와 유닉스 계열에서는 utf8가 표준으로 자리 잡았고 
+ * 문자열은 오랫동안 프로그래머들이 제대로 해결하지 못 했던 문제이고
+ * 유니코드 표준화와 이를 지원하는 라이브러리들이 안정될 때까지
+ * 기다려야 했고, 이제는 어느 정도 확정되었으나 몇 가지 영역에서
+ * 이전의 개념들과 섞여 있다.
+ *
+ * 리눅스와 유닉스 계열에서는 utf8가 표준으로 자리 잡았고
  * 윈도우에서는 utf16le가 표준으로 정리되었다.
  */
 TEST_CASE("string class")
@@ -183,7 +239,7 @@ TEST_CASE("string class")
 	}
 
 	SUBCASE("나만의 string 클래스 만들기")
-	{ 
+	{
 		SUBCASE("단위 테스트 1")
 		{
 			jiya::string str("hello world");
@@ -218,12 +274,44 @@ TEST_CASE("string class")
 			//str.print();
 		}
 
-		SUBCASE("단위 테스트 5 - at")
+		SUBCASE("단위 테스트 5 - memory reserve")
+		{
+			jiya::string str{ "HiHiWorld" };
+			int memory_size = 20;
+			str.reserve(memory_size);
+
+			CHECK(str.capacity() == memory_size);
+		}
+
+		SUBCASE("단위 테스트 6 - at")
 		{
 			jiya::string str{ "helloworld" };
 
 			str.print();
 			std::cout << "at: " << str.at(3);
+		}
+
+		SUBCASE("단위 테스트 7 - insert")
+		{
+			// memory_capacity 를 고려하여 수정하기
+			jiya::string str{ "hihi" };
+			jiya::string str2{ "length" };
+			jiya::string& st = str.insert(2, str2);
+			st.print();
+		}
+
+		SUBCASE("단위 테스트 8 - erase")
+		{
+			// 초기화하지 않고 뒤에 부분을 앞으로 끌고 왔기 때문에 뒷부분이 남아있음 
+			jiya::string str{ "HelloWorld" };
+			jiya::string& st = str.erase(1, 4);
+			str.print();
+		}
+		SUBCASE("단위 테스트 9 - find")
+		{
+		}
+		SUBCASE("단위 테스트 10 - compare")
+		{
 		}
 	}
 }
