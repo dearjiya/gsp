@@ -72,26 +72,28 @@ public:
 		return strcmp(content_, rhs.content_) == 0;
 	}
 
-	char* append(const char* str)
+	string& append(const string& str)
 	{
-		size_t length_sum = length_ + strlen(str);
-		char* res = new char[length_sum + 1]();
+		size_t length_sum = length_ + str.length_;
+		char* prev_content_ = content_;
+		content_ = new char[length_sum + 1];
 		int j = 0;
 		for (int i = 0; i < length_sum; i++)
 		{
 			if (i < length_)
 			{
-				res[i] = content_[i];
+				content_[i] = prev_content_[i];
 			}
 			else
 			{
-				res[i] = str[j];
+				content_[i] = str.content_[j];
 				j++;
 			}
 		}
-		res[length_sum] = '\0';
+		content_[length_sum] = '\0';
 
-		return res;
+		delete[] prev_content_;
+		return *this;
 	}
 
 	string& assign(const string& str)
@@ -292,7 +294,7 @@ TEST_CASE("string class")
 			jiya::string str("hello world");
 			jiya::string str2(str);
 
-			auto tmp = str2.c_str();
+			CHECK(str == str2);
 		}
 		SUBCASE("단위 테스트 2 - operation==")
 		{
@@ -305,20 +307,19 @@ TEST_CASE("string class")
 		SUBCASE("단위 테스트 3 - append")
 		{
 			// tmp를 str의 자리에 재할당 시키는 방법
-			jiya::string str("hello");
-			jiya::string str2(" world");
-			auto tmp = str.append(str2.c_str());
-			//std::cout << "append: " << tmp; 
+			jiya::string str{ "hello" };
+			jiya::string str2{"world"};
+			jiya::string res{ "helloworld" };
+			//CHECK(str == res);
 		}
 
 		SUBCASE("단위 테스트 4 - assign")
 		{
 			jiya::string str{ "hello" };
 			jiya::string str2{ "world" };
-			//str.print();
 			jiya::string& s = str.assign(str2);
 
-			//str.print();
+			CHECK(s == str.c_str());
 		}
 
 		SUBCASE("단위 테스트 5 - memory reserve")
@@ -333,9 +334,10 @@ TEST_CASE("string class")
 		SUBCASE("단위 테스트 6 - at")
 		{
 			jiya::string str{ "helloworld" };
+			jiya::string res{ "l" };
 
-			str.print();
-			std::cout << "at: " << str.at(3);
+			std::cout << "at: " << str.at(3) << std::endl;
+			CHECK(res == str.at(3));
 		}
 
 		SUBCASE("단위 테스트 7 - insert")
@@ -344,15 +346,17 @@ TEST_CASE("string class")
 			jiya::string str{ "hihi" };
 			jiya::string str2{ "length" };
 			jiya::string& st = str.insert(2, str2);
-			st.print();
+			std::cout << "insert: " << st.c_str() << std::endl;
 		}
 
 		SUBCASE("단위 테스트 8 - erase")
 		{
 			// 초기화하지 않고 뒤에 부분을 앞으로 끌고 왔기 때문에 뒷부분이 남아있음 
 			jiya::string str{ "HelloWorld" };
+			jiya::string res{ "HWorld" };
 			jiya::string& st = str.erase(1, 4);
-			str.print();
+			std::cout << "erase: " << str.c_str() << std::endl;
+			//CHECK(res == str.erase(1, 4));
 		}
 		SUBCASE("단위 테스트 9 - find")
 		{
