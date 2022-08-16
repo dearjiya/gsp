@@ -42,7 +42,6 @@ TEST_CASE("operator overloading")
 		SUBCASE("std::string")
 		{
 			std::string s{ "ÇÑ±Û" };
-
 			std::cout << s << std::endl;
 		}
 

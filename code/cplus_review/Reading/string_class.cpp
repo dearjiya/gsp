@@ -188,9 +188,56 @@ public:
 		return *this;
 	}
 
-	int find(const string& str) const
+	int find(int find_from, const string& str) const
 	{
+		int i;
+		int j;
+		if (str.length_ > length_ || str.length_ == 0)
+		{
+			return -1;
+		}
+		for (i = find_from; i < length_; i++)
+		{
+			for (j = 0; j < str.length_; j++)
+			{
+				if (content_[i + j] != str.content_[j])
+				{
+					break;
+				}
+			}
+			if (j == str.length_)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
 
+	int compare(const string& str) const
+	{
+		// 사전식 배열 비교 
+		// -1: 사전식으로 앞에 위치한다, 0: 같다, 1: 뒤에 위치한다,
+
+		for (int i = 0; i < std::min(length_, str.length_); i++)
+		{
+			if (content_[i] > str.content_[i])
+			{
+				return 1;
+			}
+			else if (content_[i] < str.content_[i])
+			{
+				return -1;
+			}
+		}
+		if (length_ == str.length_)
+		{
+			return 0;
+		}
+		else if (length_ > str.length_)
+		{
+			return 1;
+		}
+		return -1;
 	}
 
 private:
@@ -247,7 +294,7 @@ TEST_CASE("string class")
 
 			auto tmp = str2.c_str();
 		}
-		SUBCASE("단위 테스트 2 - operatio==")
+		SUBCASE("단위 테스트 2 - operation==")
 		{
 			jiya::string str("hello");
 			jiya::string str2("hello");
@@ -309,9 +356,16 @@ TEST_CASE("string class")
 		}
 		SUBCASE("단위 테스트 9 - find")
 		{
+			jiya::string str{ "helloworld" };
+			jiya::string str2{ "wor" };
+			//std::cout << "find: " << str.find(0, str2) << std::endl;
+			CHECK(5 == str.find(0, str2));
 		}
 		SUBCASE("단위 테스트 10 - compare")
 		{
+			jiya::string str{ "hello" };
+			jiya::string str2{ "helloss" };
+			CHECK(-1 == str.compare(str2));
 		}
 	}
 }
