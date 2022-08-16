@@ -83,11 +83,14 @@ public:
 			if (i < length_)
 			{
 				content_[i] = prev_content_[i];
+				std::cout << "i: " << i << content_[i] << std::endl;
 			}
 			else
 			{
 				content_[i] = str.content_[j];
 				j++;
+				std::cout << "j: " << j << content_[j] << std::endl;
+
 			}
 		}
 		content_[length_sum] = '\0';
@@ -173,7 +176,7 @@ public:
 		// 동적할당이 필요없는 경우 추가하기
 	}
 
-	string& erase(int loc, int num) 
+	string& erase(int loc, int num)
 	{
 		if (num < 0 || loc < 0 || loc > length_)
 		{
@@ -308,9 +311,9 @@ TEST_CASE("string class")
 		{
 			// tmp를 str의 자리에 재할당 시키는 방법
 			jiya::string str{ "hello" };
-			jiya::string str2{"world"};
+			jiya::string str2{ "world" };
 			jiya::string res{ "helloworld" };
-			//CHECK(str == res);
+			CHECK(str.append(str2) == res);
 		}
 
 		SUBCASE("단위 테스트 4 - assign")
