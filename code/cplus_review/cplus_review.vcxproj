@@ -147,9 +147,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="complex_class.cpp" />
     <ClCompile Include="cplus_review.cpp" />
     <ClCompile Include="Reading\class_const_static_member.cpp" />
+    <ClCompile Include="Reading\complex_class.cpp" />
     <ClCompile Include="Reading\copy_constructor.cpp" />
     <ClCompile Include="Reading\Date.cpp" />
     <ClCompile Include="Reading\day_01.cpp" />
