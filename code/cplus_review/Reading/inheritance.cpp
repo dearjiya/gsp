@@ -37,7 +37,7 @@ TEST_CASE("inheritance")
 
 				void Shout()
 				{
-					std::cout << "Parent" << std::endl;
+					// std::cout << "Parent" << std::endl;
 				}
 			};
 
@@ -49,7 +49,7 @@ TEST_CASE("inheritance")
 
 				void Shout()
 				{
-					std::cout << "Child" << std::endl;
+					// std::cout << "Child" << std::endl;
 				}
 			};
 

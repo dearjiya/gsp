@@ -42,7 +42,7 @@ TEST_CASE("operator overloading")
 		SUBCASE("std::string")
 		{
 			std::string s{ "한글" };
-			std::cout << s << std::endl;
+			//std::cout << s << std::endl;
 		}
 
 		/**
@@ -50,8 +50,8 @@ TEST_CASE("operator overloading")
 		 */
 		SUBCASE("std::wstring")
 		{
-			std::wstring w1{ L"한글" };
-			std::wstring w2{ L"World" };
+			//std::wstring w1{ L"한글" };
+			//std::wstring w2{ L"World" };
 		}
 	}
 

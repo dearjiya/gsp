@@ -43,15 +43,15 @@ TEST_CASE("day 04")
 		char b = 'c';
 		double c = 3.2f;
 
-		print(a);
-		print(b);
-		print(c);
+		//print(a);
+		//print(b);
+		//print(c);
 	}
 
 	SUBCASE("function overloading - implicit type conversion")
 	{
 		long c = 3;
-		print(static_cast<char>(c));
+		//print(static_cast<char>(c));
 	}
 
 	SUBCASE("default constructor")

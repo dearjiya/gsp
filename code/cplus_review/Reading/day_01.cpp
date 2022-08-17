@@ -21,7 +21,7 @@ TEST_CASE("reading 01")
 	SUBCASE("std::cout")
 	{
 		// TODO: cout을 사용하여 출력 
-		std::cout << "Hello World" << std::endl;
+		//std::cout << "Hello World" << std::endl;
 	}
 
 	SUBCASE("using namespace")
@@ -44,7 +44,7 @@ TEST_CASE("reading 01")
 		{
 			sum += i;
 		}
-		std::cout << "합은: " << sum << std::endl;
+		//std::cout << "합은: " << sum << std::endl;
 		CHECK(sum == 45);
 	}
 

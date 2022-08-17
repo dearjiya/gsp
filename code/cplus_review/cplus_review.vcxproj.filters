@@ -56,6 +56,9 @@
     <ClCompile Include="Reading\inheritance.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
+    <ClCompile Include="complex_class.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp">

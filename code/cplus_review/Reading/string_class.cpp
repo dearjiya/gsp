@@ -1,4 +1,5 @@
 #include <doctest/doctest.h>
+#include <cassert>
 #include <iostream>
 #include <string>
 
@@ -11,7 +12,7 @@ public:
 	string()
 		: content_{ nullptr }
 		, length_{ 0 }
-		, memory_capacity{ 0 }
+		, memory_capacity_{ 0 }
 	{
 	}
 
@@ -21,19 +22,22 @@ public:
 		content_[0] = c;
 		content_[1] = '\0'; // invariant - 끝에 널문자가 있다.
 		length_ = 1;
-		memory_capacity = 1;
+		memory_capacity_ = 1;
+		assert(length_ <= memory_capacity_);
 	}
 
 	string(const char* cs)
 	{
 		length_ = strlen(cs);
 		content_ = new char[length_ + 1]();
+		// NOTE: memcpy를 쓸 수도 있다.
 		for (int i = 0; i < length_; i++)
 		{
 			content_[i] = cs[i];
 		}
 		content_[length_] = '\0';
-		memory_capacity = length_;
+		memory_capacity_ = length_;
+		assert(length_ <= memory_capacity_);
 	}
 
 	string(const jiya::string& str)
@@ -51,9 +55,9 @@ public:
 		return length_;
 	}
 
-	int capacity() const
+	size_t capacity() const
 	{
-		return memory_capacity;
+		return memory_capacity_;
 	}
 
 	const char* c_str() const
@@ -83,46 +87,51 @@ public:
 			if (i < length_)
 			{
 				content_[i] = prev_content_[i];
-				std::cout << "i: " << i << content_[i] << std::endl;
 			}
 			else
 			{
 				content_[i] = str.content_[j];
 				j++;
-				std::cout << "j: " << j << content_[j] << std::endl;
-
 			}
 		}
 		content_[length_sum] = '\0';
 
 		delete[] prev_content_;
+		//std::cout << "append: " << content_ << std::endl;
+
+		memory_capacity_ = length_sum + 1;
+		length_ = length_sum;
+		assert(length_ <= memory_capacity_);
+
 		return *this;
 	}
 
 	string& assign(const string& str)
 	{
-		if (str.length_ > memory_capacity)
+		if (str.length_ > memory_capacity_)
 		{
 			delete[] content_;
 			content_ = new char[str.length_ + 1];
-			memory_capacity = str.length_;
 		}
 		for (int i = 0; i < str.length_; i++)
 		{
 			content_[i] = str.content_[i];
 		}
 		content_[str.length_] = '\0';
+
+		memory_capacity_ = str.length_ + 1;
 		length_ = str.length_;
+		assert(length_ <= memory_capacity_);
 		return *this;
 	}
 
-	void reserve(int size)
+	void reserve(size_t size)
 	{
-		if (size > memory_capacity)
+		if (size > memory_capacity_)
 		{
 			char* prev_content_ = content_;
 			content_ = new char[size];
-			memory_capacity = size;
+			memory_capacity_ = size;
 
 			for (int i = 0; i < length_; i++)
 			{
@@ -133,28 +142,30 @@ public:
 		}
 	}
 
-	char at(int i) const
+	char at(size_t i) const
 	{
-		if (i > length_ || i < 0)
+		if (i > length_)
 		{
-			return NULL;
+			throw std::out_of_range("size의 index 값이 초과하였습니다!");
 		}
-		else
-			return content_[i];
+
+		return content_[i];
 	}
 
-	string& insert(int loc, const string& str)
+	string& insert(size_t loc, const string& str)
 	{
-		if (loc < 0 || loc > length_)
+		assert(loc <= length_);
+
+		if (loc > length_)
 		{
-			return *this;
+			throw std::out_of_range("loc의 index가 길이를 초과하였습니다!");
 		}
 
-		if (length_ + str.length_ > memory_capacity)
+		// XXX: '\0' 처리가 일관되는가?
+		if (length_ + str.length_ > memory_capacity_)
 		{
-			memory_capacity = length_ + str.length_;
 			char* prev_content_ = content_;
-			content_ = new char[memory_capacity + 1];
+			content_ = new char[length_ + str.length_ + 1];
 
 			int i;
 			for (i = 0; i < loc; i++)
@@ -170,17 +181,40 @@ public:
 				content_[str.length_ + i] = prev_content_[i];
 			}
 			delete[] prev_content_;
+
+			memory_capacity_ = length_ + str.length_ + 1;
 			length_ = length_ + str.length_;
+			content_[length_] = '\0';
+			assert(length_ <= memory_capacity_);
 			return *this;
 		}
-		// 동적할당이 필요없는 경우 추가하기
+		else
+		{
+			std::cout << "insert- newX" << std::endl;
+			for (int i = length_ - 1; i >= loc; i--)
+			{
+				content_[i + str.length_] = content_[i];
+			}
+			for (int i = 0; i < str.length_; i++)
+			{
+				content_[i + loc] = str.content_[i];
+			}
+
+			length_ = length_ + str.length_;
+			content_[length_] = '\0';
+			return *this;
+		}
 	}
 
-	string& erase(int loc, int num)
+	string& erase(size_t loc, size_t num)
 	{
-		if (num < 0 || loc < 0 || loc > length_)
+		if (loc >= length_)
 		{
-			return *this;
+			throw std::out_of_range("loc의 index가 범위를 초과하였습니다!");
+		}
+		if ((num + loc) >= length_)
+		{
+			throw std::out_of_range("num+loc의 index가 범위를 초과하였습니다!");
 		}
 
 		for (int i = loc + num; i < length_; i++)
@@ -188,8 +222,8 @@ public:
 			content_[i - num] = content_[i];
 		}
 
-		length_ = length_ - num;
-
+		length_ = length_ - num; // 음수가 될 수 있으므로 체크에서 걸러야 한다.
+		content_[length_] = '\0';
 		return *this;
 	}
 
@@ -248,7 +282,7 @@ public:
 private:
 	char* content_;
 	size_t length_;
-	int memory_capacity;
+	size_t memory_capacity_;
 };
 
 } // namespace jiya
@@ -309,10 +343,10 @@ TEST_CASE("string class")
 
 		SUBCASE("단위 테스트 3 - append")
 		{
-			// tmp를 str의 자리에 재할당 시키는 방법
 			jiya::string str{ "hello" };
 			jiya::string str2{ "world" };
 			jiya::string res{ "helloworld" };
+
 			CHECK(str.append(str2) == res);
 		}
 
@@ -338,37 +372,48 @@ TEST_CASE("string class")
 		{
 			jiya::string str{ "helloworld" };
 			jiya::string res{ "l" };
-
-			std::cout << "at: " << str.at(3) << std::endl;
+			//std::cout << "at: " << str.at(3) << std::endl;
 			CHECK(res == str.at(3));
 		}
 
 		SUBCASE("단위 테스트 7 - insert")
 		{
-			// memory_capacity 를 고려하여 수정하기
+			// memory_capacity_ 를 고려하여 수정하기
 			jiya::string str{ "hihi" };
 			jiya::string str2{ "length" };
+			jiya::string res{ "hilengthhi" };
+			jiya::string& st = str.insert(2, str2);
+			//std::cout << "insert: " << st.c_str() << std::endl;
+			CHECK(res == st.c_str());
+		}
+		SUBCASE("단위 테스트 8 - insert (동적할당X)")
+		{
+			jiya::string str{ "hello" };
+			jiya::string str2{ "pp" };
+			str.reserve(10);
+			jiya::string res{ "heppllo" };
 			jiya::string& st = str.insert(2, str2);
 			std::cout << "insert: " << st.c_str() << std::endl;
+			CHECK(res == st.c_str());
 		}
 
-		SUBCASE("단위 테스트 8 - erase")
+		SUBCASE("단위 테스트 9 - erase")
 		{
-			// 초기화하지 않고 뒤에 부분을 앞으로 끌고 왔기 때문에 뒷부분이 남아있음 
 			jiya::string str{ "HelloWorld" };
 			jiya::string res{ "HWorld" };
 			jiya::string& st = str.erase(1, 4);
-			std::cout << "erase: " << str.c_str() << std::endl;
-			//CHECK(res == str.erase(1, 4));
+			// jiya::string& st2 = str.erase(8, 5);
+			// std::cout << "erase: " << st.c_str() << std::endl;
+			CHECK(res == st.c_str());
 		}
-		SUBCASE("단위 테스트 9 - find")
+		SUBCASE("단위 테스트 10 - find")
 		{
 			jiya::string str{ "helloworld" };
 			jiya::string str2{ "wor" };
 			//std::cout << "find: " << str.find(0, str2) << std::endl;
 			CHECK(5 == str.find(0, str2));
 		}
-		SUBCASE("단위 테스트 10 - compare")
+		SUBCASE("단위 테스트 11 - compare")
 		{
 			jiya::string str{ "hello" };
 			jiya::string str2{ "helloss" };
