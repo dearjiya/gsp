@@ -279,6 +279,11 @@ public:
 		return -1;
 	}
 
+	char& operator[] (const int index)
+	{
+		return content_[index];
+	}
+
 private:
 	char* content_;
 	size_t length_;
@@ -393,7 +398,7 @@ TEST_CASE("string class")
 			str.reserve(10);
 			jiya::string res{ "heppllo" };
 			jiya::string& st = str.insert(2, str2);
-			std::cout << "insert: " << st.c_str() << std::endl;
+			//std::cout << "insert: " << st.c_str() << std::endl;
 			CHECK(res == st.c_str());
 		}
 
@@ -418,6 +423,14 @@ TEST_CASE("string class")
 			jiya::string str{ "hello" };
 			jiya::string str2{ "helloss" };
 			CHECK(-1 == str.compare(str2));
+		}
+
+		SUBCASE("단위 테스트 12 - operator[]")
+		{
+			jiya::string str{ "helloworld" };
+			CHECK(str[5] == 'w');
+			str[5] = 'p';
+			CHECK(str[5] == 'p');
 		}
 	}
 }

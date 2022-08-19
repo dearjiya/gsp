@@ -12,6 +12,12 @@
     <Filter Include="Reading">
       <UniqueIdentifier>{e4e22873-8e89-4c9f-a37c-3b9a1a3f9d6f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tour">
+      <UniqueIdentifier>{dcc1677c-0101-4919-a675-94ad24da35bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tour\1. The Basics">
+      <UniqueIdentifier>{1b235449-1425-469d-9509-72375372d318}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cplus_review.cpp">
@@ -57,6 +63,24 @@
       <Filter>Reading</Filter>
     </ClCompile>
     <ClCompile Include="Reading\complex_class.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\1. The Basics\1. Introduction.cpp">
+      <Filter>Tour\1. The Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\1. The Basics\2. Programs.cpp">
+      <Filter>Tour\1. The Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\1. The Basics\3. Functions.cpp">
+      <Filter>Tour\1. The Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\friend.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\1. The Basics\4. Types Variables Arithmetic.cpp">
+      <Filter>Tour\1. The Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\int_wrapper.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
   </ItemGroup>

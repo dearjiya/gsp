@@ -158,10 +158,16 @@
     <ClCompile Include="Reading\day_04.cpp" />
     <ClCompile Include="Reading\destructor.cpp" />
     <ClCompile Include="Reading\explict_mutable.cpp" />
+    <ClCompile Include="Reading\friend.cpp" />
     <ClCompile Include="Reading\inheritance.cpp" />
     <ClCompile Include="Reading\initializer_list.cpp" />
+    <ClCompile Include="Reading\int_wrapper.cpp" />
     <ClCompile Include="Reading\operator_overloading.cpp" />
     <ClCompile Include="Reading\string_class.cpp" />
+    <ClCompile Include="Tour\1. The Basics\1. Introduction.cpp" />
+    <ClCompile Include="Tour\1. The Basics\2. Programs.cpp" />
+    <ClCompile Include="Tour\1. The Basics\3. Functions.cpp" />
+    <ClCompile Include="Tour\1. The Basics\4. Types Variables Arithmetic.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp" />
