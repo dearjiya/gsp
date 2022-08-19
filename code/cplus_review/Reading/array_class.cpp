@@ -3,6 +3,12 @@
 
 namespace
 {
+struct Address
+{
+	int level;
+	void* next;
+};
+
 class Int
 {
 public:
