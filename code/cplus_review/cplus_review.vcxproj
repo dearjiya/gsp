@@ -173,6 +173,8 @@
     <ClCompile Include="Tour\1. The Basics\5. Scope and Lifetime.cpp" />
     <ClCompile Include="Tour\1. The Basics\6. Constants.cpp" />
     <ClCompile Include="Tour\1. The Basics\7. .Pointers, Arrays, and References.cpp" />
+    <ClCompile Include="Tour\1. The Basics\8. Tests.cpp" />
+    <ClCompile Include="Tour\1. The Basics\9. Mapping to Hardware.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp" />

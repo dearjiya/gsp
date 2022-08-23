@@ -98,6 +98,12 @@
     <ClCompile Include="Tour\1. The Basics\7. .Pointers, Arrays, and References.cpp">
       <Filter>Tour\1. The Basics</Filter>
     </ClCompile>
+    <ClCompile Include="Tour\1. The Basics\8. Tests.cpp">
+      <Filter>Tour\1. The Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\1. The Basics\9. Mapping to Hardware.cpp">
+      <Filter>Tour\1. The Basics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp">

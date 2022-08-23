@@ -10,7 +10,9 @@ TEST_CASE("Basics / Pointers, Arrays, and References")
 	 */
 	SUBCASE("pointer 연습")
 	{
-
+		char v[6];
+		char* p = &v[3];  // p는 v의 4번째 요소를 가리킨다
+		char x = *p; // 
 	}
 
 	SUBCASE("ranged-for array")
