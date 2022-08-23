@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cplus_review.cpp" />
+    <ClCompile Include="Reading\array_class.cpp" />
     <ClCompile Include="Reading\class_const_static_member.cpp" />
     <ClCompile Include="Reading\complex_class.cpp" />
     <ClCompile Include="Reading\copy_constructor.cpp" />
@@ -157,6 +158,7 @@
     <ClCompile Include="Reading\day_03.cpp" />
     <ClCompile Include="Reading\day_04.cpp" />
     <ClCompile Include="Reading\destructor.cpp" />
+    <ClCompile Include="Reading\employee class.cpp" />
     <ClCompile Include="Reading\explict_mutable.cpp" />
     <ClCompile Include="Reading\friend.cpp" />
     <ClCompile Include="Reading\inheritance.cpp" />
@@ -168,6 +170,9 @@
     <ClCompile Include="Tour\1. The Basics\2. Programs.cpp" />
     <ClCompile Include="Tour\1. The Basics\3. Functions.cpp" />
     <ClCompile Include="Tour\1. The Basics\4. Types Variables Arithmetic.cpp" />
+    <ClCompile Include="Tour\1. The Basics\5. Scope and Lifetime.cpp" />
+    <ClCompile Include="Tour\1. The Basics\6. Constants.cpp" />
+    <ClCompile Include="Tour\1. The Basics\7. .Pointers, Arrays, and References.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp" />

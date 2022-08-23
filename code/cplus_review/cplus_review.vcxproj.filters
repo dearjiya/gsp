@@ -83,6 +83,21 @@
     <ClCompile Include="Reading\int_wrapper.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
+    <ClCompile Include="Reading\array_class.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\1. The Basics\5. Scope and Lifetime.cpp">
+      <Filter>Tour\1. The Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\1. The Basics\6. Constants.cpp">
+      <Filter>Tour\1. The Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\employee class.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\1. The Basics\7. .Pointers, Arrays, and References.cpp">
+      <Filter>Tour\1. The Basics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp">

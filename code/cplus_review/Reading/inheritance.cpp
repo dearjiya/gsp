@@ -59,6 +59,57 @@ TEST_CASE("inheritance")
 			Child c;
 			c.Shout();
 		}
+
+		SUBCASE("protected")
+		{
+			class Base
+			{
+			protected:
+				std::string parent_string;
+
+			public:
+				Base() : s("기반")
+				{
+					std::cout << "기반 클래스" << std::endl;
+				}
+				void what()
+				{
+					std::cout << s << std::endl;
+				}
+
+			private:
+				std::string s;
+			};
+
+			class Derived : public Base
+			{
+				std::string child_string;
+
+			public:
+				Derived() : Base(), s("파생")
+				{
+					std::cout << "파생 클래스" << std::endl;
+
+					what();
+				}
+
+				std::string s;
+				
+				// 오버라이딩
+				void what()
+				{
+					std::cout << s << std::endl;
+				}
+
+			//	parent_string = 
+
+			};
+
+			std::cout << "===기반 클래스 생성===" << std::endl;
+			Base p;
+			std::cout << "===파생 클래스 생성===" << std::endl;
+			Derived c;
+		}
 	}
 
 	SUBCASE("use case")
