@@ -17,8 +17,18 @@ TEST_CASE("Basics / Pointers, Arrays, and References")
 
 	SUBCASE("ranged-for array")
 	{
-		int v[] = { 1, 2, 3, 4 };
-		// TODO: 
+		int vec[] = { 1, 2, 3, 4 };
+
+		for (auto v : vec)
+		{
+			std::cout << v << "\n";
+			// vec의 처음부터 끝까지의 원소를 v에 copy하고 print 한다
+		}
+
+		for (auto x : { 10, 21, 32, 43, 54, 65 })
+		{
+			std::cout << x << "\n";
+		}
 	}
 
 	/**
@@ -30,12 +40,12 @@ TEST_CASE("Basics / Pointers, Arrays, and References")
 	}
 
 	/**
-	 * char* p; 
+	 * char* p;
 	 * int* p;
 	 * ++가 어떻게 다르게(같게?) 동작하는가?
 	 */
 	SUBCASE("++ on pointer type")
 	{
-		
+
 	}
 }
