@@ -109,6 +109,11 @@ TEST_CASE("inheritance")
 			Base p;
 			std::cout << "===파생 클래스 생성===" << std::endl;
 			Derived c;
+
+			std::cout << "===포인터 버전===" << std::endl;
+			// Derived is a Base
+			Base* p_c = &c;
+			p_c->what();
 		}
 	}
 

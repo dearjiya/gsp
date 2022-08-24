@@ -2,6 +2,31 @@
 #include <iostream>
 #include <vector>
 
+namespace jiya
+{
+int sum(std::vector<int> values)
+{
+	std::cout << "sum: " << &values << std::endl;
+	int res = 0;
+	for (auto& a : values)
+	{
+		res += a;
+	}
+	return res;
+}
+
+int sum2(const std::vector<int>& values)
+{
+	std::cout << "sum2: " << &values << std::endl;
+	int res = 0;
+	for (auto& a : values)
+	{
+		res += a;
+	}
+	return res;
+}
+}
+
 TEST_CASE("Basics / Pointers, Arrays, and References")
 {
 
@@ -37,6 +62,11 @@ TEST_CASE("Basics / Pointers, Arrays, and References")
 	 */
 	SUBCASE("copy occurrs without reference")
 	{
+
+		std::vector<int> vec = { 1,2,3,4 };
+		std::cout << "vector_address: " << &vec << std::endl;
+		jiya::sum(vec);
+		jiya::sum2(vec);
 	}
 
 	/**
@@ -46,6 +76,5 @@ TEST_CASE("Basics / Pointers, Arrays, and References")
 	 */
 	SUBCASE("++ on pointer type")
 	{
-
 	}
 }

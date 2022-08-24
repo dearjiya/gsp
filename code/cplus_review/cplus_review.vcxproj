@@ -158,6 +158,7 @@
     <ClCompile Include="Reading\day_03.cpp" />
     <ClCompile Include="Reading\day_04.cpp" />
     <ClCompile Include="Reading\destructor.cpp" />
+    <ClCompile Include="Reading\dot_arrow_test.cpp" />
     <ClCompile Include="Reading\employee class.cpp" />
     <ClCompile Include="Reading\explict_mutable.cpp" />
     <ClCompile Include="Reading\friend.cpp" />
@@ -172,7 +173,7 @@
     <ClCompile Include="Tour\1. The Basics\4. Types Variables Arithmetic.cpp" />
     <ClCompile Include="Tour\1. The Basics\5. Scope and Lifetime.cpp" />
     <ClCompile Include="Tour\1. The Basics\6. Constants.cpp" />
-    <ClCompile Include="Tour\1. The Basics\7. .Pointers, Arrays, and References.cpp" />
+    <ClCompile Include="Tour\1. The Basics\7. Pointers, Arrays, and References.cpp" />
     <ClCompile Include="Tour\1. The Basics\8. Tests.cpp" />
     <ClCompile Include="Tour\1. The Basics\9. Mapping to Hardware.cpp" />
   </ItemGroup>
