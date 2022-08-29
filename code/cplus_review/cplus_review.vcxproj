@@ -176,6 +176,8 @@
     <ClCompile Include="Tour\1. The Basics\7. Pointers, Arrays, and References.cpp" />
     <ClCompile Include="Tour\1. The Basics\8. Tests.cpp" />
     <ClCompile Include="Tour\1. The Basics\9. Mapping to Hardware.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\1. Introduction.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\2. Structures.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp" />
