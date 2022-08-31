@@ -178,6 +178,10 @@
     <ClCompile Include="Tour\1. The Basics\9. Mapping to Hardware.cpp" />
     <ClCompile Include="Tour\2. User-Defined Types\1. Introduction.cpp" />
     <ClCompile Include="Tour\2. User-Defined Types\2. Structures.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\3. Classes.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\4. Unions.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\5. Enumerations.cpp" />
+    <ClCompile Include="Tour\3. Modularity\1. Introduction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Reading\Date.hpp" />

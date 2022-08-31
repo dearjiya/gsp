@@ -14,6 +14,12 @@ struct Vector
 		v.elem = new double[size];
 		v.size = size;
 	}
+
+	double& operator[](int i)
+	{
+
+	}
+
 	void f(Vector v, Vector& rv, Vector* pv)
 	{
 		int a = v.size;

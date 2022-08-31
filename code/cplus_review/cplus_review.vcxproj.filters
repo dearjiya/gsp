@@ -21,6 +21,9 @@
     <Filter Include="Tour\2. User-Defined Types">
       <UniqueIdentifier>{db3727ed-fc5f-4f6a-869a-d358ba8043ca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tour\3. Modularity">
+      <UniqueIdentifier>{8eb81181-0a93-4a5b-968a-efb53ca4ab1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cplus_review.cpp">
@@ -115,6 +118,18 @@
     </ClCompile>
     <ClCompile Include="Tour\2. User-Defined Types\2. Structures.cpp">
       <Filter>Tour\2. User-Defined Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\2. User-Defined Types\3. Classes.cpp">
+      <Filter>Tour\2. User-Defined Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\2. User-Defined Types\4. Unions.cpp">
+      <Filter>Tour\2. User-Defined Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\2. User-Defined Types\5. Enumerations.cpp">
+      <Filter>Tour\2. User-Defined Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\1. Introduction.cpp">
+      <Filter>Tour\3. Modularity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
