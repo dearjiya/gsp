@@ -14,5 +14,6 @@ TEST_CASE("ios base")
 {
 	SUBCASE("")
 	{
+		//std::cin.f
 	}
 }

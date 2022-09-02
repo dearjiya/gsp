@@ -30,6 +30,6 @@ TEST_CASE("Modularity / Error Handling")
 
 	SUBCASE("Contracts")
 	{
-
+		static_assert(4 == sizeof(int));
 	}
 }

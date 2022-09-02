@@ -165,6 +165,7 @@
     <ClCompile Include="Reading\inheritance.cpp" />
     <ClCompile Include="Reading\initializer_list.cpp" />
     <ClCompile Include="Reading\int_wrapper.cpp" />
+    <ClCompile Include="Reading\ios_base.cpp" />
     <ClCompile Include="Reading\operator_overloading.cpp" />
     <ClCompile Include="Reading\string_class.cpp" />
     <ClCompile Include="Tour\1. The Basics\1. Introduction.cpp" />
@@ -182,9 +183,16 @@
     <ClCompile Include="Tour\2. User-Defined Types\4. Unions.cpp" />
     <ClCompile Include="Tour\2. User-Defined Types\5. Enumerations.cpp" />
     <ClCompile Include="Tour\3. Modularity\1. Introduction.cpp" />
+    <ClCompile Include="Tour\3. Modularity\2. Separate Compilation.cpp" />
+    <ClCompile Include="Tour\3. Modularity\4. Namespaces.cpp" />
+    <ClCompile Include="Tour\3. Modularity\5. Error Handling.cpp" />
+    <ClCompile Include="Tour\3. Modularity\6. Function Arguments and Return Values.cpp" />
+    <ClCompile Include="Tour\4. Classes\1. Introduction.cpp" />
+    <ClCompile Include="Tour\4. Classes\2. Concrete Types.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Reading\Date.hpp" />
+    <ClInclude Include="Header\Date.hpp" />
+    <ClInclude Include="Header\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

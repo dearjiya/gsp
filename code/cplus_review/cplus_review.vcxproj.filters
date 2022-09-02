@@ -24,6 +24,12 @@
     <Filter Include="Tour\3. Modularity">
       <UniqueIdentifier>{8eb81181-0a93-4a5b-968a-efb53ca4ab1f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{ad3ee584-c1ab-4a88-8b53-2e492ec25535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tour\4. Classes">
+      <UniqueIdentifier>{08f2516f-8152-4e6c-aedf-23d13b8b4121}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cplus_review.cpp">
@@ -131,10 +137,34 @@
     <ClCompile Include="Tour\3. Modularity\1. Introduction.cpp">
       <Filter>Tour\3. Modularity</Filter>
     </ClCompile>
+    <ClCompile Include="Reading\ios_base.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\2. Separate Compilation.cpp">
+      <Filter>Tour\3. Modularity</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\4. Namespaces.cpp">
+      <Filter>Tour\3. Modularity</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\5. Error Handling.cpp">
+      <Filter>Tour\3. Modularity</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\6. Function Arguments and Return Values.cpp">
+      <Filter>Tour\3. Modularity</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\4. Classes\1. Introduction.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\4. Classes\2. Concrete Types.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Reading\Date.hpp">
-      <Filter>Reading</Filter>
+    <ClInclude Include="Header\Vector.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Date.hpp">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
