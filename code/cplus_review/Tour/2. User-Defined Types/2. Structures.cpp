@@ -23,11 +23,11 @@ struct Vector
 	void f(Vector v, Vector& rv, Vector* pv)
 	{
 		int a = v.size;
-		std::cout << "a: " << a << std::endl;
+		//std::cout << "a: " << a << std::endl;
 		int b = rv.size;
-		std::cout << "b: " << b << std::endl;
+		//std::cout << "b: " << b << std::endl;
 		int c = pv->size;
-		std::cout << "c: " << c << std::endl;
+		//std::cout << "c: " << c << std::endl;
 	}
 };
 double read_and_sum(int s)
@@ -57,7 +57,7 @@ TEST_CASE("User-Defined Types/ Structures")
 	SUBCASE("Vector 예제 따라하기")
 	{
 		auto sum_ = jiya::read_and_sum(5);
-		std::cout << "read_and_sum: " << sum_ << std::endl;
+		//std::cout << "read_and_sum: " << sum_ << std::endl;
 		jiya::Vector v; 
 		jiya::Vector& rv = v;
 		jiya::Vector* pv = &v;

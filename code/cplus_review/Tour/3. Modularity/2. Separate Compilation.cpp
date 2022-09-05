@@ -1,14 +1,32 @@
 ﻿#include <doctest/doctest.h>
 #include <iostream>
-//#include "/dearjiya/gsp/code/cplus_review/Header/Vector.h"
+#include "/dearjiya/gsp/code/cplus_review/Header/Vector.h"
 
-namespace
+double sqrt_sum(test::Vector& v)
 {
-} // namespace
+	double sum = 0;
+	for (int i = 0; i != v.size(); ++i)
+	{
+		sum += std::sqrt(v[i]);
+	}
+	return sum;
+}
 
-/**
- *
- */
+test::Vector::Vector(int s)
+	:elem{ new double[s] }, size_{ s } 
+{
+}
+
+double& test::Vector::operator[](int i)
+{
+	return elem[i];
+}
+
+int test::Vector::size()
+{
+	return size_;
+}
+
 TEST_CASE("Modularity / Separate Compilation")
 {
 	/**

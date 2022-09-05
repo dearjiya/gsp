@@ -33,21 +33,26 @@ public:
 		img_ = d;
 	}
 
-	//complex& operator+=(complex z)
+	complex operator+=(complex& z);
 	//{
 	//	real_ += z.real_;
 	//	img_ += z.img_;
 	//	return *this;
 	//}
 
-	//complex& operator -=(complex z)
-	//{
-	//	real_ -= z.real_;
-	//	img_ -= z.img_;
-	//	return *this;
-	//}
-	//complex& operator*=(complex);
-	//complex& operator/=(complex);
+	complex& operator -=(complex z)
+	{
+		real_ -= z.real_;
+		img_ -= z.img_;
+		return *this;
+	}
+
+	complex& operator*=(complex)
+	{
+		
+	}
+
+	complex& operator/=(complex&);
 
 	void print()
 	{
@@ -61,6 +66,36 @@ public:
 private:
 	double real_;
 	double img_;
+};
+
+// member function
+complex& complex::operator/=(complex& b)
+{
+	return *this;
+}
+
+// free operator (namespace function)
+complex operator/(complex a, complex b)
+{
+	return a /= b;
+}
+
+complex complex::operator+=(complex& a)
+{
+	complex com{};
+	com.real_ += a.real_;
+	com.img_ += a.img_;
+
+	return com;
+}
+
+class Destructor
+{
+public: 
+	~Destructor()
+	{
+		std::cout << "Destructor" << std::endl;
+	}
 };
 }
 
@@ -90,6 +125,19 @@ TEST_CASE("Classes / Concrete Types")
 	 */
 	SUBCASE("complex free operators")
 	{
+
+	}
+
+	SUBCASE("containers")
+	{
+
+		SUBCASE("destructor called automatically when it is destroyed")
+		{
+			concrete::Destructor d;
+
+			concrete::Destructor* pd = new concrete::Destructor();
+			delete pd;
+		}
 
 	}
 }
