@@ -1,5 +1,5 @@
 #include <doctest/doctest.h>
-#include "/dearjiya/gsp/code/cplus_review/Header/Vector.h"
+#include <iostream>
 
 namespace concrete
 {
@@ -24,6 +24,39 @@ public:
 	{
 		real_ = d;
 	}
+	double imag() const
+	{
+		return img_;
+	}
+	void imag(double d)
+	{
+		img_ = d;
+	}
+
+	//complex& operator+=(complex z)
+	//{
+	//	real_ += z.real_;
+	//	img_ += z.img_;
+	//	return *this;
+	//}
+
+	//complex& operator -=(complex z)
+	//{
+	//	real_ -= z.real_;
+	//	img_ -= z.img_;
+	//	return *this;
+	//}
+	//complex& operator*=(complex);
+	//complex& operator/=(complex);
+
+	void print()
+	{
+		std::cout << real_ << "i" << img_ << std::endl;
+	}
+	inline void print2()
+	{
+		std::cout << real_ << "i" << img_ << std::endl;
+	}
 
 private:
 	double real_;
@@ -35,7 +68,11 @@ TEST_CASE("Classes / Concrete Types")
 {
 	SUBCASE("complex review")
 	{
-
+		concrete::complex z{ 1,0 };
+		const concrete::complex cz{ 1,2 };
+		z = cz;
+		// cz = z; // error
+		double x = z.real();
 	}
 
 	/**
@@ -43,6 +80,9 @@ TEST_CASE("Classes / Concrete Types")
 	 */
 	SUBCASE("inlining")
 	{
+		concrete::complex com_{ 2,3 };
+		com_.print();
+		com_.print2();
 	}
 
 	/**
