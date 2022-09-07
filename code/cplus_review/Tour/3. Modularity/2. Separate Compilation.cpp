@@ -1,6 +1,6 @@
 ﻿#include <doctest/doctest.h>
 #include <iostream>
-#include "/dearjiya/gsp/code/cplus_review/Header/Vector.h"
+#include <Header/Vector.h>
 
 double sqrt_sum(test::Vector& v)
 {
@@ -20,11 +20,6 @@ test::Vector::Vector(int s)
 double& test::Vector::operator[](int i)
 {
 	return elem[i];
-}
-
-int test::Vector::size()
-{
-	return size_;
 }
 
 TEST_CASE("Modularity / Separate Compilation")

@@ -158,6 +158,12 @@
     <ClCompile Include="Tour\4. Classes\2. Concrete Types.cpp">
       <Filter>Tour\4. Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Tour\4. Classes\3. Abstract Types.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\4. Classes\4. Virtual Functions.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Vector.h">

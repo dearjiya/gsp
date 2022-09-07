@@ -6,8 +6,13 @@ class Vector
 {
 public:
 	Vector(int s);
+
 	double& operator[](int i);
-	int size();
+
+	virtual int size() const
+	{
+		return size_;
+	}
 private:
 	double* elem;
 	int size_;

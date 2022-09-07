@@ -123,6 +123,8 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,6 +140,8 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -189,6 +193,8 @@
     <ClCompile Include="Tour\3. Modularity\6. Function Arguments and Return Values.cpp" />
     <ClCompile Include="Tour\4. Classes\1. Introduction.cpp" />
     <ClCompile Include="Tour\4. Classes\2. Concrete Types.cpp" />
+    <ClCompile Include="Tour\4. Classes\3. Abstract Types.cpp" />
+    <ClCompile Include="Tour\4. Classes\4. Virtual Functions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Date.hpp" />
