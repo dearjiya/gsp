@@ -195,6 +195,9 @@
     <ClCompile Include="Tour\4. Classes\2. Concrete Types.cpp" />
     <ClCompile Include="Tour\4. Classes\3. Abstract Types.cpp" />
     <ClCompile Include="Tour\4. Classes\4. Virtual Functions.cpp" />
+    <ClCompile Include="Tour\4. Classes\5. Class Hierarchies.cpp" />
+    <ClCompile Include="Tour\5. Esstential Operators\1. Introduction.cpp" />
+    <ClCompile Include="Tour\5. Esstential Operators\2. Copy and Move.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Date.hpp" />

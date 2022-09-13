@@ -30,6 +30,9 @@
     <Filter Include="Tour\4. Classes">
       <UniqueIdentifier>{08f2516f-8152-4e6c-aedf-23d13b8b4121}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tour\5. Essential OperatIons">
+      <UniqueIdentifier>{f9effb78-145f-453d-8967-1e795d11dd44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cplus_review.cpp">
@@ -163,6 +166,15 @@
     </ClCompile>
     <ClCompile Include="Tour\4. Classes\4. Virtual Functions.cpp">
       <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\4. Classes\5. Class Hierarchies.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\5. Esstential Operators\1. Introduction.cpp">
+      <Filter>Tour\5. Essential OperatIons</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\5. Esstential Operators\2. Copy and Move.cpp">
+      <Filter>Tour\5. Essential OperatIons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
