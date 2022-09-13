@@ -17,6 +17,12 @@
     <ClCompile Include="Items\item_03.cpp" />
     <ClCompile Include="Items\item_04.cpp" />
     <ClCompile Include="Items\item_05.cpp" />
+    <ClCompile Include="Items\item_06.cpp" />
+    <ClCompile Include="Items\item_07.cpp" />
+    <ClCompile Include="Items\item_08.cpp" />
+    <ClCompile Include="Items\item_09.cpp" />
+    <ClCompile Include="Items\item_10.cpp" />
+    <ClCompile Include="Items\item_11.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
