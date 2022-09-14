@@ -14,6 +14,18 @@
     <ClCompile Include="effective_stl.cpp" />
     <ClCompile Include="Items\item_01.cpp" />
     <ClCompile Include="Items\item_02.cpp" />
+    <ClCompile Include="Items\item_03.cpp" />
+    <ClCompile Include="Items\item_04.cpp" />
+    <ClCompile Include="Items\item_05.cpp" />
+    <ClCompile Include="Items\item_06.cpp" />
+    <ClCompile Include="Items\item_07.cpp" />
+    <ClCompile Include="Items\item_08.cpp" />
+    <ClCompile Include="Items\item_09.cpp" />
+    <ClCompile Include="Items\item_10.cpp" />
+    <ClCompile Include="Items\item_11.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -26,13 +38,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
