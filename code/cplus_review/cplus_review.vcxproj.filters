@@ -33,6 +33,9 @@
     <Filter Include="Tour\5. Essential OperatIons">
       <UniqueIdentifier>{f9effb78-145f-453d-8967-1e795d11dd44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tour\6. Templates">
+      <UniqueIdentifier>{491c76b7-1b32-4b70-b5ea-a984759f3b41}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cplus_review.cpp">
@@ -175,6 +178,21 @@
     </ClCompile>
     <ClCompile Include="Tour\5. Esstential Operators\2. Copy and Move.cpp">
       <Filter>Tour\5. Essential OperatIons</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\5. Esstential Operators\3. Resource Management.cpp">
+      <Filter>Tour\5. Essential OperatIons</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\5. Esstential Operators\4. Conventional Operations.cpp">
+      <Filter>Tour\5. Essential OperatIons</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\6. Templates\2. Parameterized Types.cpp">
+      <Filter>Tour\6. Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\6. Templates\3. Parameterized Operations.cpp">
+      <Filter>Tour\6. Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\6. Templates\4. Template Mechanisms.cpp">
+      <Filter>Tour\6. Templates</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

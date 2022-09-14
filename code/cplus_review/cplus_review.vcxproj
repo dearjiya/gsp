@@ -198,6 +198,11 @@
     <ClCompile Include="Tour\4. Classes\5. Class Hierarchies.cpp" />
     <ClCompile Include="Tour\5. Esstential Operators\1. Introduction.cpp" />
     <ClCompile Include="Tour\5. Esstential Operators\2. Copy and Move.cpp" />
+    <ClCompile Include="Tour\5. Esstential Operators\3. Resource Management.cpp" />
+    <ClCompile Include="Tour\5. Esstential Operators\4. Conventional Operations.cpp" />
+    <ClCompile Include="Tour\6. Templates\2. Parameterized Types.cpp" />
+    <ClCompile Include="Tour\6. Templates\3. Parameterized Operations.cpp" />
+    <ClCompile Include="Tour\6. Templates\4. Template Mechanisms.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Date.hpp" />

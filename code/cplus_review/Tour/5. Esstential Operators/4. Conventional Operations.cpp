@@ -2,7 +2,7 @@
 #include <iostream>
 #include <list>
 #include <vector>
-
+#include <unordered_map>
 
 namespace
 {
@@ -19,5 +19,22 @@ TEST_CASE("Essential Operations / Conventional Operations")
 		std::vector<int> v2{ 3, 1, 1 };
 
 		std::swap(v1, v2);
+	}
+
+	/**
+	 * associative container: key, value
+	 * c#/python : dictionary
+	 * - hash table 
+	 * - binary search tree 
+	 *   - balanced binary search tree
+	 *   - red-black, AVL tree 
+	 */
+	SUBCASE("std::unordered_map 사용")
+	{
+		std::unordered_map<int, int> im = { {1, 2} };
+
+		auto v = im[1];
+		im.erase(1);
+		im.insert({ 2, 3 });
 	}
 }
