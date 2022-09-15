@@ -6,7 +6,7 @@ namespace jiya
 {
 int sum(std::vector<int> values)
 {
-	std::cout << "sum: " << &values << std::endl;
+	//std::cout << "sum: " << &values << std::endl;
 	int res = 0;
 	for (auto& a : values)
 	{
@@ -17,7 +17,7 @@ int sum(std::vector<int> values)
 
 int sum2(const std::vector<int>& values)
 {
-	std::cout << "sum2: " << &values << std::endl;
+	//std::cout << "sum2: " << &values << std::endl;
 	int res = 0;
 	for (auto& a : values)
 	{
@@ -46,13 +46,13 @@ TEST_CASE("Basics / Pointers, Arrays, and References")
 
 		for (auto v : vec)
 		{
-			std::cout << v << "\n";
+			//std::cout << v << "\n";
 			// vec의 처음부터 끝까지의 원소를 v에 copy하고 print 한다
 		}
 
 		for (auto x : { 10, 21, 32, 43, 54, 65 })
 		{
-			std::cout << x << "\n";
+			//std::cout << x << "\n";
 		}
 	}
 
@@ -64,7 +64,7 @@ TEST_CASE("Basics / Pointers, Arrays, and References")
 	{
 
 		std::vector<int> vec = { 1,2,3,4 };
-		std::cout << "vector_address: " << &vec << std::endl;
+		//std::cout << "vector_address: " << &vec << std::endl;
 		jiya::sum(vec);
 		jiya::sum2(vec);
 	}

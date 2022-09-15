@@ -123,6 +123,8 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,6 +140,8 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -165,6 +169,7 @@
     <ClCompile Include="Reading\inheritance.cpp" />
     <ClCompile Include="Reading\initializer_list.cpp" />
     <ClCompile Include="Reading\int_wrapper.cpp" />
+    <ClCompile Include="Reading\ios_base.cpp" />
     <ClCompile Include="Reading\operator_overloading.cpp" />
     <ClCompile Include="Reading\string_class.cpp" />
     <ClCompile Include="Tour\1. The Basics\1. Introduction.cpp" />
@@ -176,9 +181,32 @@
     <ClCompile Include="Tour\1. The Basics\7. Pointers, Arrays, and References.cpp" />
     <ClCompile Include="Tour\1. The Basics\8. Tests.cpp" />
     <ClCompile Include="Tour\1. The Basics\9. Mapping to Hardware.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\1. Introduction.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\2. Structures.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\3. Classes.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\4. Unions.cpp" />
+    <ClCompile Include="Tour\2. User-Defined Types\5. Enumerations.cpp" />
+    <ClCompile Include="Tour\3. Modularity\1. Introduction.cpp" />
+    <ClCompile Include="Tour\3. Modularity\2. Separate Compilation.cpp" />
+    <ClCompile Include="Tour\3. Modularity\4. Namespaces.cpp" />
+    <ClCompile Include="Tour\3. Modularity\5. Error Handling.cpp" />
+    <ClCompile Include="Tour\3. Modularity\6. Function Arguments and Return Values.cpp" />
+    <ClCompile Include="Tour\4. Classes\1. Introduction.cpp" />
+    <ClCompile Include="Tour\4. Classes\2. Concrete Types.cpp" />
+    <ClCompile Include="Tour\4. Classes\3. Abstract Types.cpp" />
+    <ClCompile Include="Tour\4. Classes\4. Virtual Functions.cpp" />
+    <ClCompile Include="Tour\4. Classes\5. Class Hierarchies.cpp" />
+    <ClCompile Include="Tour\5. Esstential Operators\1. Introduction.cpp" />
+    <ClCompile Include="Tour\5. Esstential Operators\2. Copy and Move.cpp" />
+    <ClCompile Include="Tour\5. Esstential Operators\3. Resource Management.cpp" />
+    <ClCompile Include="Tour\5. Esstential Operators\4. Conventional Operations.cpp" />
+    <ClCompile Include="Tour\6. Templates\2. Parameterized Types.cpp" />
+    <ClCompile Include="Tour\6. Templates\3. Parameterized Operations.cpp" />
+    <ClCompile Include="Tour\6. Templates\4. Template Mechanisms.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Reading\Date.hpp" />
+    <ClInclude Include="Header\Date.hpp" />
+    <ClInclude Include="Header\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

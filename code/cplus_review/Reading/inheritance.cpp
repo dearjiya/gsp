@@ -70,11 +70,11 @@ TEST_CASE("inheritance")
 			public:
 				Base() : s("기반")
 				{
-					std::cout << "기반 클래스" << std::endl;
+					//std::cout << "기반 클래스" << std::endl;
 				}
 				void what()
 				{
-					std::cout << s << std::endl;
+					//std::cout << s << std::endl;
 				}
 
 			private:
@@ -98,28 +98,97 @@ TEST_CASE("inheritance")
 				// 오버라이딩
 				void what()
 				{
-					std::cout << s << std::endl;
+					//std::cout << s << std::endl;
 				}
 
 			//	parent_string = 
 
 			};
 
-			std::cout << "===기반 클래스 생성===" << std::endl;
-			Base p;
-			std::cout << "===파생 클래스 생성===" << std::endl;
-			Derived c;
+			//std::cout << "===기반 클래스 생성===" << std::endl;
+			Base b;
+			//std::cout << "===파생 클래스 생성===" << std::endl;
+			Derived d;
 
-			std::cout << "===포인터 버전===" << std::endl;
+			//std::cout << "===포인터 버전===" << std::endl;
 			// Derived is a Base
-			Base* p_c = &c;
-			p_c->what();
+			Base* b_b = &d;
+			
+			// b_b가 가리키는 것이 Derived 객체이긴 하지만 에러가 발생하므로 강제 다운캐스팅
+			//Derived* base_to_derived = base_to_base;
+			Derived* b_d = static_cast<Derived*>(b_b);
+			b_d->what();
+			// 캐스팅이 정확하게 되었으므로 문제는 없지만 잘못 사용하면 오류가 발생한다
+
 		}
 	}
 
 	SUBCASE("use case")
 	{
+		class Base
+		{
+		public:
+			Base() {}
+			virtual ~Base() { std::cout << "Base 소멸자 호출" << std::endl; }
+		public:
+			virtual void Talk()
+			{
+				std::cout << "나는 Base" << std::endl;
+			}
+		};
 
+		class Derived : public Base
+		{
+		public:
+			Derived() {}
+			~Derived() { std::cout << "Derived 소멸자 호출" << std::endl; }
+		public:
+			void Talk()
+			{
+				std::cout << "나는 Derived" << std::endl;
+			}
+		};
+
+		Base* b = new Derived();
+
+		delete b;
 	}
 
+	SUBCASE("multiple inheritance")
+	{
+		class A 
+		{
+		public:
+			int a;
+
+			A() 
+			{
+				std::cout << "A 생성자 호출" << std::endl;
+			}
+		};
+
+		class B 
+		{
+		public:
+			int b;
+
+			B()
+			{
+				std::cout << "B 생성자 호출" << std::endl;
+			}
+		};
+
+		class C : public B, public A
+		{
+		public:
+			int c;
+
+			C()
+			{
+				std::cout << "C 생성자 호출" << std::endl;
+			}
+		};
+
+		C c;
+	}
 }

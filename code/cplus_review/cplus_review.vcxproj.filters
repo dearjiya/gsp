@@ -18,6 +18,24 @@
     <Filter Include="Tour\1. The Basics">
       <UniqueIdentifier>{1b235449-1425-469d-9509-72375372d318}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tour\2. User-Defined Types">
+      <UniqueIdentifier>{db3727ed-fc5f-4f6a-869a-d358ba8043ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tour\3. Modularity">
+      <UniqueIdentifier>{8eb81181-0a93-4a5b-968a-efb53ca4ab1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{ad3ee584-c1ab-4a88-8b53-2e492ec25535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tour\4. Classes">
+      <UniqueIdentifier>{08f2516f-8152-4e6c-aedf-23d13b8b4121}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tour\5. Essential OperatIons">
+      <UniqueIdentifier>{f9effb78-145f-453d-8967-1e795d11dd44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tour\6. Templates">
+      <UniqueIdentifier>{491c76b7-1b32-4b70-b5ea-a984759f3b41}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cplus_review.cpp">
@@ -107,10 +125,82 @@
     <ClCompile Include="Reading\dot_arrow_test.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
+    <ClCompile Include="Tour\2. User-Defined Types\1. Introduction.cpp">
+      <Filter>Tour\2. User-Defined Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\2. User-Defined Types\2. Structures.cpp">
+      <Filter>Tour\2. User-Defined Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\2. User-Defined Types\3. Classes.cpp">
+      <Filter>Tour\2. User-Defined Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\2. User-Defined Types\4. Unions.cpp">
+      <Filter>Tour\2. User-Defined Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\2. User-Defined Types\5. Enumerations.cpp">
+      <Filter>Tour\2. User-Defined Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\1. Introduction.cpp">
+      <Filter>Tour\3. Modularity</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\ios_base.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\2. Separate Compilation.cpp">
+      <Filter>Tour\3. Modularity</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\4. Namespaces.cpp">
+      <Filter>Tour\3. Modularity</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\5. Error Handling.cpp">
+      <Filter>Tour\3. Modularity</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\3. Modularity\6. Function Arguments and Return Values.cpp">
+      <Filter>Tour\3. Modularity</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\4. Classes\1. Introduction.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\4. Classes\2. Concrete Types.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\4. Classes\3. Abstract Types.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\4. Classes\4. Virtual Functions.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\4. Classes\5. Class Hierarchies.cpp">
+      <Filter>Tour\4. Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\5. Esstential Operators\1. Introduction.cpp">
+      <Filter>Tour\5. Essential OperatIons</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\5. Esstential Operators\2. Copy and Move.cpp">
+      <Filter>Tour\5. Essential OperatIons</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\5. Esstential Operators\3. Resource Management.cpp">
+      <Filter>Tour\5. Essential OperatIons</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\5. Esstential Operators\4. Conventional Operations.cpp">
+      <Filter>Tour\5. Essential OperatIons</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\6. Templates\2. Parameterized Types.cpp">
+      <Filter>Tour\6. Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\6. Templates\3. Parameterized Operations.cpp">
+      <Filter>Tour\6. Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\6. Templates\4. Template Mechanisms.cpp">
+      <Filter>Tour\6. Templates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Reading\Date.hpp">
-      <Filter>Reading</Filter>
+    <ClInclude Include="Header\Vector.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Date.hpp">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

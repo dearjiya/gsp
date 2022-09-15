@@ -34,10 +34,10 @@ TEST_CASE("dot_arrow")
 
 		jiya::Monster* monster2_ = new jiya::Monster(); // 클래스(객체) 동적선언 
 
-		std::cout << "player_ damage: " << player_.damage_ << std::endl;
+	/*	std::cout << "player_ damage: " << player_.damage_ << std::endl;
 		std::cout << "plyer2_ damage: " << player2_->damage_ << std::endl;
 
 		std::cout << "monster_ damage: " << monster_.damage_ << std::endl;
-		std::cout << "monster2_ damage: " << monster2_->damage_ << std::endl;
+		std::cout << "monster2_ damage: " << monster2_->damage_ << std::endl;*/
 	}
 }

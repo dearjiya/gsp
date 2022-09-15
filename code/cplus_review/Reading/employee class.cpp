@@ -24,12 +24,12 @@
 //
 //	Employee() {}
 //
-//	void print_info()
+//	virtual void print_info()
 //	{
 //		std::cout << name_ << " (" << position_ << " , " << age_ << ") ==>"
 //			<< calculate_pay() << "¸¸¿ø" << std::endl;
 //	}
-//	int calculate_pay()
+//	virtual	int calculate_pay()
 //	{
 //		return 200 + rank_ * 50;
 //	}
