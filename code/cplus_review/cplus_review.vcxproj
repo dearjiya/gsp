@@ -172,6 +172,7 @@
     <ClCompile Include="Reading\ios_base.cpp" />
     <ClCompile Include="Reading\operator_overloading.cpp" />
     <ClCompile Include="Reading\string_class.cpp" />
+    <ClCompile Include="Reading\vector_template.cpp" />
     <ClCompile Include="Tour\1. The Basics\1. Introduction.cpp" />
     <ClCompile Include="Tour\1. The Basics\2. Programs.cpp" />
     <ClCompile Include="Tour\1. The Basics\3. Functions.cpp" />
@@ -181,6 +182,10 @@
     <ClCompile Include="Tour\1. The Basics\7. Pointers, Arrays, and References.cpp" />
     <ClCompile Include="Tour\1. The Basics\8. Tests.cpp" />
     <ClCompile Include="Tour\1. The Basics\9. Mapping to Hardware.cpp" />
+    <ClCompile Include="Tour\11. Containers\2. Vector.cpp" />
+    <ClCompile Include="Tour\11. Containers\3. List.cpp" />
+    <ClCompile Include="Tour\12. Algorithms\2. Use of Iterators.cpp" />
+    <ClCompile Include="Tour\12. Algorithms\3. Iterator Types.cpp" />
     <ClCompile Include="Tour\2. User-Defined Types\1. Introduction.cpp" />
     <ClCompile Include="Tour\2. User-Defined Types\2. Structures.cpp" />
     <ClCompile Include="Tour\2. User-Defined Types\3. Classes.cpp" />
@@ -203,6 +208,8 @@
     <ClCompile Include="Tour\6. Templates\2. Parameterized Types.cpp" />
     <ClCompile Include="Tour\6. Templates\3. Parameterized Operations.cpp" />
     <ClCompile Include="Tour\6. Templates\4. Template Mechanisms.cpp" />
+    <ClCompile Include="Tour\9. Strings and Regular Expressions\2. Strings.cpp" />
+    <ClCompile Include="Tour\9. Strings and Regular Expressions\3. String Views.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Date.hpp" />

@@ -36,6 +36,15 @@
     <Filter Include="Tour\6. Templates">
       <UniqueIdentifier>{491c76b7-1b32-4b70-b5ea-a984759f3b41}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tour\9. Strings and Regular Expressions">
+      <UniqueIdentifier>{b809caa2-d360-4f24-8cf8-3c7fb77fed89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tour\11. Containers">
+      <UniqueIdentifier>{76c72c9d-e09a-4389-b8af-c781eb5d03fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tour\12. Algorithms">
+      <UniqueIdentifier>{93eeed23-5aa5-4ba8-9d11-30bed864fce2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cplus_review.cpp">
@@ -193,6 +202,27 @@
     </ClCompile>
     <ClCompile Include="Tour\6. Templates\4. Template Mechanisms.cpp">
       <Filter>Tour\6. Templates</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\9. Strings and Regular Expressions\2. Strings.cpp">
+      <Filter>Tour\9. Strings and Regular Expressions</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\9. Strings and Regular Expressions\3. String Views.cpp">
+      <Filter>Tour\9. Strings and Regular Expressions</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\vector_template.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\11. Containers\2. Vector.cpp">
+      <Filter>Tour\11. Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\12. Algorithms\2. Use of Iterators.cpp">
+      <Filter>Tour\12. Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\12. Algorithms\3. Iterator Types.cpp">
+      <Filter>Tour\12. Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\11. Containers\3. List.cpp">
+      <Filter>Tour\11. Containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
