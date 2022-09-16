@@ -1,6 +1,5 @@
 #include <doctest/doctest.h>
 #include <iostream>
-//#include "/dearjiya/gsp/code/cplus_review/Header/Vector.h"
 
 namespace concrete
 {

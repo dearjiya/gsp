@@ -2,12 +2,34 @@
 
 #include <vector>
 
+namespace temp
+{
+template<typename T>
+class Vector
+{
+public:
+	explicit Vector(int s);
+	~Vector()
+	{
+		delete[] elem;
+	}
+	T& operator[](int i);
+	const T& operator[](int i) const;
+	int size() const
+	{
+		return size_;
+	}
+
+private:
+	T* elem;
+	int size_;
+};
+}
+
 TEST_CASE("Templates / Parameterized Types")
 {
 	SUBCASE("Vector를 템플릿으로 만들기")
 	{
-		// template <typename T>
-		// class Vector	
 	}
 
 	SUBCASE("std::pair와 타잎 추론")
