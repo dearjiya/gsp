@@ -18,7 +18,13 @@ public:
 	todo(int priority, std::string desc)
 		: priority_{ priority }, job_desc{ desc }
 	{
+	}
+	bool operator< (const todo& t) const
+	{
+		if (priority_ < t.priority_)
+		{
 
+		}
 	}
 private:
 	int priority_;
