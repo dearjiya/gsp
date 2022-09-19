@@ -225,10 +225,13 @@
       <Filter>Tour\11. Containers</Filter>
     </ClCompile>
     <ClCompile Include="Tour\11. Containers\4. Map.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Tour\11. Containers\5. unor.cpp">
       <Filter>Tour\11. Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\11. Containers\5. unordered_map.cpp">
+      <Filter>Tour\11. Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\todo_class_set.cpp">
+      <Filter>Reading</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

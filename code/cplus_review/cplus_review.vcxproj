@@ -172,6 +172,7 @@
     <ClCompile Include="Reading\ios_base.cpp" />
     <ClCompile Include="Reading\operator_overloading.cpp" />
     <ClCompile Include="Reading\string_class.cpp" />
+    <ClCompile Include="Reading\todo_class_set.cpp" />
     <ClCompile Include="Reading\vector_template.cpp" />
     <ClCompile Include="Tour\1. The Basics\1. Introduction.cpp" />
     <ClCompile Include="Tour\1. The Basics\2. Programs.cpp" />
@@ -185,7 +186,7 @@
     <ClCompile Include="Tour\11. Containers\2. Vector.cpp" />
     <ClCompile Include="Tour\11. Containers\3. List.cpp" />
     <ClCompile Include="Tour\11. Containers\4. Map.cpp" />
-    <ClCompile Include="Tour\11. Containers\5. unor.cpp" />
+    <ClCompile Include="Tour\11. Containers\5. unordered_map.cpp" />
     <ClCompile Include="Tour\12. Algorithms\2. Use of Iterators.cpp" />
     <ClCompile Include="Tour\12. Algorithms\3. Iterator Types.cpp" />
     <ClCompile Include="Tour\2. User-Defined Types\1. Introduction.cpp" />
