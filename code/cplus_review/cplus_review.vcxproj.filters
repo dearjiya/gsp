@@ -224,6 +224,12 @@
     <ClCompile Include="Tour\11. Containers\3. List.cpp">
       <Filter>Tour\11. Containers</Filter>
     </ClCompile>
+    <ClCompile Include="Tour\11. Containers\4. Map.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\11. Containers\5. unor.cpp">
+      <Filter>Tour\11. Containers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Vector.h">
