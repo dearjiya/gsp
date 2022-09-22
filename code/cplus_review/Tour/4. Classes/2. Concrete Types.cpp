@@ -9,7 +9,7 @@ public:
 	complex(double r, double i) : real_{ r }, img_{ i }
 	{
 	}
-	complex(double r) : real_{ r }
+	complex(double r) : real_{ r }, img_{ 0 }
 	{
 	}
 	complex() : real_{ 0 }, img_{ 0 }

@@ -21,15 +21,24 @@ public:
 	}
 	bool operator< (const todo& t) const
 	{
-		if (priority_ < t.priority_)
+		if (priority_ == t.priority_)
 		{
-
+			return job_desc < t.job_desc;
 		}
+		return priority_ > t.priority_;
 	}
+	friend std::ostream& operator<<(std::ostream& o, const todo& td);
+
 private:
 	int priority_;
 	std::string job_desc;
 };
+
+std::ostream& operator<<(std::ostream& o, const todo& td)
+{
+	o << "[ �߿䵵: " << td.priority_ << "] " << td.job_desc;
+	return o;
+}
 
 TEST_CASE("todo_class_set")
 {

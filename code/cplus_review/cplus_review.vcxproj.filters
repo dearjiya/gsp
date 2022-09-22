@@ -227,10 +227,13 @@
     <ClCompile Include="Tour\11. Containers\4. Map.cpp">
       <Filter>Tour\11. Containers</Filter>
     </ClCompile>
-    <ClCompile Include="Tour\11. Containers\5. unordered_map.cpp">
+    <ClCompile Include="Reading\todo_class_set.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\11. Containers\5. Unordered_map.cpp">
       <Filter>Tour\11. Containers</Filter>
     </ClCompile>
-    <ClCompile Include="Reading\todo_class_set.cpp">
+    <ClCompile Include="Reading\player_map.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
   </ItemGroup>
