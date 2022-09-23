@@ -1,25 +1,28 @@
 #include <doctest/doctest.h>
 
 #include <iostream>
-#include <vector>
 #include <set>
 #include <map>
+#include <unordered_map>
 
-TEST_CASE("Containers / Map")
+template<typename K>
+void print_set(const std::multiset<K>& s)
 {
-	SUBCASE("std::set 사용하기")
+	for (const auto& elem : s)
 	{
-		SUBCASE("vector의 insert와 비교해보기")
-		{
-			std::vector<int> vec{ 1,2,3 };
-			std::vector<int>::iterator vec_itr = vec.begin() + 2;
-			vec.insert(vec_itr, 4);
-
-			std::set<int> s{ 10,20,30 };
-			s.insert(40);
-		}
+		std::cout << elem << std::endl;
 	}
-	SUBCASE("std::map 사용하기")
+}
+
+TEST_CASE("Containers / Unordered_map")
+{
+	SUBCASE("std::multiset 사용하기")
+	{
+	}
+	SUBCASE("std::multimap 사용하기")
+	{
+	}
+	SUBCASE("std::unorderedmap 사용하기")
 	{
 	}
 }

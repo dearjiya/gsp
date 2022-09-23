@@ -2,11 +2,53 @@
 #include <iostream>
 #include <vector>
 
-namespace
+namespace jiya
+{
+class Vector
+{
+public:
+	Vector(int s) :elem{ new double[s] }, size_{ s }{}
+
+	double& operator[] (int i)
+	{
+		if (i < 0 || size() <= i)
+		{
+			throw std::out_of_range{ "Vector::operator[]"};
+		}
+		return elem[i];
+	}
+
+	int size() const
+	{
+		return size_;
+	}
+
+	double read_and_sum(int s)
+	{
+		Vector v(s);
+		for (int i = 0; i != v.size(); ++i)
+		{
+			v[i] = i;
+		}
+		double sum = 0;
+		for (int i = 0; i != v.size(); ++i)
+		{
+			sum += v[i];
+		}
+		return sum;
+	}
+
+private:
+	double* elem;
+	int size_;
+};
+
+}
+
+double& jiya::Vector::operator[](int i)
 {
 
-} // namespace
-
+}
 /**
  *
  */
