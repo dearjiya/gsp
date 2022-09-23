@@ -23,6 +23,5 @@ TEST_CASE("Essential Operations / Introduction")
 	 */
 	SUBCASE("default generated copy constructor, assignment copy operator")
 	{
-
 	}
 }
