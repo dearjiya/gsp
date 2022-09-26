@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <array>
 
 namespace
 {
@@ -72,6 +73,13 @@ TEST_CASE("Modularity / Function Arguments and Return Values")
 		{
 			std::cout << k << ' ' << v << '\n';
 		}
-
 	}
+	SUBCASE("Structured Binding - vector")
+	{
+		std::vector<int> vec{ 1,2,3 };
+		// auto& [a, b, c] = vec;
+		std::array<int , 3> arr{ 1,2,3 };
+		auto [a, b, c] = arr;
+	}
+
 }

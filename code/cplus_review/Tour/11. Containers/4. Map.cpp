@@ -21,5 +21,13 @@ TEST_CASE("Containers / Map")
 	}
 	SUBCASE("std::map 사용하기")
 	{
+		std::map<std::string, int> phone_book
+		{
+			{"David Hume",123456 },
+			{ "Karl Popper",234567 },
+			{ "Ber trand Ar thur William Russell",345678 }
+		};
+
+		std::cout << phone_book["David"] << std::endl;
 	}
 }

@@ -5,6 +5,25 @@
 
 namespace
 {
+class Point
+{
+public:
+	int x; 
+	int y;
+};
+class Shape
+{
+public:
+	virtual Point center() const = 0;
+	virtual void move(Point to) = 0;
+	virtual void draw() const = 0;
+	virtual void rotate(int angle) = 0; 
+	//virtual  ̃Shape() {}
+	
+private:
+	Point x;
+	int r;
+};
 }
 
 TEST_CASE("Classes / Class Hierarchies")

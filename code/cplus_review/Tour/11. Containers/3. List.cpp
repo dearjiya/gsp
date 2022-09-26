@@ -4,6 +4,15 @@
 #include <vector>
 #include <list>
 
+namespace
+{
+struct Entry
+{
+	std::string name;
+	int number;
+};
+}
+
 TEST_CASE("Containers / List")
 {
 	SUBCASE("std::list사용하기")
@@ -24,5 +33,29 @@ TEST_CASE("Containers / List")
 				break;
 			}
 		}*/
+	}
+
+	SUBCASE("")
+	{
+		std::list<Entry> phone_book = {
+			{"David",123456},
+			{"Karl Popper",234567}, 
+			{"Ber trand Ar thur William Russell",345678} 
+		};
+		for (const auto& x : phone_book)
+		{
+			if (x.name =="David")
+			{
+				std::cout << x.number << std::endl;
+			}
+		}
+
+		for (auto p = phone_book.begin(); p != phone_book.end(); ++p)
+		{
+			if (p->name == "David")
+			{
+				std::cout << p->number << std::endl;
+			}
+		}
 	}
 }
