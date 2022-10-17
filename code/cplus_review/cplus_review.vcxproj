@@ -175,6 +175,7 @@
     <ClCompile Include="Reading\string_class.cpp" />
     <ClCompile Include="Reading\todo_class_set.cpp" />
     <ClCompile Include="Reading\vector_template.cpp" />
+    <ClCompile Include="Reading\veriadic_template.cpp" />
     <ClCompile Include="Tour\1. The Basics\1. Introduction.cpp" />
     <ClCompile Include="Tour\1. The Basics\2. Programs.cpp" />
     <ClCompile Include="Tour\1. The Basics\3. Functions.cpp" />
@@ -188,6 +189,7 @@
     <ClCompile Include="Tour\11. Containers\3. List.cpp" />
     <ClCompile Include="Tour\11. Containers\4. Map.cpp" />
     <ClCompile Include="Tour\11. Containers\5. Unordered_map.cpp" />
+    <ClCompile Include="Tour\11. Containers\6. Container Overview.cpp" />
     <ClCompile Include="Tour\12. Algorithms\2. Use of Iterators.cpp" />
     <ClCompile Include="Tour\12. Algorithms\3. Iterator Types.cpp" />
     <ClCompile Include="Tour\2. User-Defined Types\1. Introduction.cpp" />
@@ -212,6 +214,8 @@
     <ClCompile Include="Tour\6. Templates\2. Parameterized Types.cpp" />
     <ClCompile Include="Tour\6. Templates\3. Parameterized Operations.cpp" />
     <ClCompile Include="Tour\6. Templates\4. Template Mechanisms.cpp" />
+    <ClCompile Include="Tour\7. Concepts and Generic Programming\3. Generic Programming.cpp" />
+    <ClCompile Include="Tour\7. Concepts and Generic Programming\4. Variadic Templates.cpp" />
     <ClCompile Include="Tour\9. Strings and Regular Expressions\2. Strings.cpp" />
     <ClCompile Include="Tour\9. Strings and Regular Expressions\3. String Views.cpp" />
   </ItemGroup>

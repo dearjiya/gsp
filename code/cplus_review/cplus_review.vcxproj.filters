@@ -45,6 +45,9 @@
     <Filter Include="Tour\12. Algorithms">
       <UniqueIdentifier>{93eeed23-5aa5-4ba8-9d11-30bed864fce2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Tour\7. Concepts and Generic Programming">
+      <UniqueIdentifier>{5de47d1f-c98c-4f25-ae80-978c8fed8ce0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cplus_review.cpp">
@@ -234,6 +237,18 @@
       <Filter>Tour\11. Containers</Filter>
     </ClCompile>
     <ClCompile Include="Reading\player_map.cpp">
+      <Filter>Reading</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\11. Containers\6. Container Overview.cpp">
+      <Filter>Tour\11. Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\7. Concepts and Generic Programming\4. Variadic Templates.cpp">
+      <Filter>Tour\7. Concepts and Generic Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="Tour\7. Concepts and Generic Programming\3. Generic Programming.cpp">
+      <Filter>Tour\7. Concepts and Generic Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="Reading\veriadic_template.cpp">
       <Filter>Reading</Filter>
     </ClCompile>
   </ItemGroup>

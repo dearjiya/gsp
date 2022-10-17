@@ -66,5 +66,7 @@ TEST_CASE("Algorithms / Iterator Types")
 		}
 		std::cout << "레퍼런스로 받음" << std::endl;
 		print_vec(vec);
+
+		auto p = std::make_shared<int>();
 	}
 }
