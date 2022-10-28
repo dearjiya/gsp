@@ -32,7 +32,7 @@ namespace Train
         /// </summary>
         public string[] fileRead()
         {
-            var filePath = @"D:\dearjiya\gsp\code\train\word_count\data\helloworld.txt";
+            var filePath = @"D:\dearjiya\gsp\code\train\word_count\data\linetest.txt";
             var lines = File.ReadAllLines(filePath, Encoding.UTF8);
             //foreach(var line in lines)
             //{

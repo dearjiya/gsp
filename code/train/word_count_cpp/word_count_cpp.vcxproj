@@ -141,7 +141,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Counter\file_reader.cpp" />
-    <ClCompile Include="world_count_cpp.cpp" />
+    <ClCompile Include="Counter\main.cpp" />
+    <ClCompile Include="Counter\word_counter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Counter\file_reader.h" />
+    <ClInclude Include="Counter\word_counter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

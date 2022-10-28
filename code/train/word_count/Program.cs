@@ -10,8 +10,8 @@ namespace Train
     {
         static void Main(string[] args)
         {
-            Counter counter = new Counter();
-            int res = counter.uniqueWordCount();
+            LineCounter counter = new LineCounter();
+            int res = counter.isMatchCount("hello", "linetest.txt");
             Console.WriteLine(res);
             Console.ReadLine();
         }

@@ -1,25 +1,29 @@
 #include<iostream>
-#include<fstream>
-#include<sstream>
-#include<string>
-#include<vector>
+#include"word_counter.h"
 
 /*
  * istringstream 은 문자열 포맷을 parsing할 때 사용된다  => 문자열에서 필요한 값을 추출하고, 공백과 \n을 무시함
  */
 int main()
 {
-	std::string str = "aa bb, ccc";
-	std::istringstream ss(str);
-	std::string stringBuffer;
-	std::vector<std::string> vec;
-	vec.clear();
+	Counter counter;
+	std::cout << "word count: ";
+	std::cout << counter.wordCount() << std::endl;
+	std::cout << "unique word count: ";
+	std::cout << counter.uniqueWordCount() << std::endl;
+	//// 
+	//std::string str = "aa bb, ccc";
+	//std::istringstream ss(str);
+	//std::string stringBuffer;
+	//std::vector<std::string> vec;
+	//vec.clear();
 
-	while (std::getline(ss, stringBuffer, ' '))
-	{
-		vec.push_back(stringBuffer);
-		std::cout << stringBuffer << ": ";
-	}
+	//while (std::getline(ss, stringBuffer, ' '))
+	//{
+	//	vec.push_back(stringBuffer);
+	//	std::cout << stringBuffer << ": ";
+	//}
+	//return 0;
 }
 
 //std::vector<std::string> split(std::string str, std::string delim)

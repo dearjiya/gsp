@@ -6,23 +6,17 @@ using System.Threading.Tasks;
 
 namespace Train
 {
-    class Counter
+    class WordCounter : ICounter
     {
         char[] delimiters = new char[] { ' ', '\r', '\n' };
 
-        public int wordCount()
-        {
-            string str = "aa bb ccc";
-            int count = str.Split(delimiters, StringSplitOptions.RemoveEmptyEntries).Length;
-            return count;
-        }
 
-        public int fileWordCount()
+        public int count()
         {
             int count = 0;
             FileReader fileReader = new FileReader();
             string[] lines = fileReader.fileRead();
-            
+
             System.Console.WriteLine("=== FileRead === ");
             foreach (string line in lines)
             {
@@ -39,14 +33,14 @@ namespace Train
             FileReader fileReader = new FileReader();
             var lines = fileReader.fileRead();
 
-            foreach(var line in lines)
+            foreach (var line in lines)
             {
                 HashSet<string> uniqueWords = new HashSet<string>(line.Split(delimiters, StringSplitOptions.RemoveEmptyEntries), StringComparer.OrdinalIgnoreCase);
                 uCount += uniqueWords.Count;
             }
 
-           return uCount;
+            return uCount;
         }
-       
-}
+
+    }
 }
