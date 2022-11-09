@@ -10,10 +10,17 @@ namespace Train
     {
         static void Main(string[] args)
         {
-            LineCounter counter = new LineCounter();
-            int res = counter.isMatchCount("hello", "linetest.txt");
-            Console.WriteLine(res);
-            Console.ReadLine();
+            Console.WriteLine("command >> ");
+            string str = Console.ReadLine();
+            Command command = new Command(str);
+            Cmd cmd = new Cmd(command);
+            cmd.executeCommand(command);
+            Console.WriteLine("request command: " + command);
+
+            //LineCounter counter = new LineCounter();
+            //int res = counter.isMatchCount("hello", "linetest.txt");
+            //Console.WriteLine(res);
+            //Console.ReadLine();
         }
     }
 }
