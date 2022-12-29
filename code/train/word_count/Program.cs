@@ -10,11 +10,14 @@ namespace Train
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("command >> ");
+            // grep c hello linetest.txt
+            Console.Write("command >> ");
             string str = Console.ReadLine();
+
             Command command = new Command(str);
             Cmd cmd = new Cmd(command);
             cmd.executeCommand(command);
+            
             Console.WriteLine("request command: " + command);
 
             //LineCounter counter = new LineCounter();

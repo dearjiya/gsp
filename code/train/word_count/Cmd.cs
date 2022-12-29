@@ -32,12 +32,10 @@ namespace Train
                 case "grep":
                 case "Grep":
                     Console.WriteLine("grep command");
-                    Grep grep = new Grep();
-                    result = grep.execute(command);
+                    Grep grep = new Grep(command);
+                    grep.execute();
                     break;
             }
-
-            return result;
         }
 
 

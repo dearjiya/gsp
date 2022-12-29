@@ -37,5 +37,23 @@ namespace Train
 
             return matchCount;
         }
+
+        public List<string> getMatchLine(string str, string file)
+        {
+            bool boolMatch = false;
+            FileReader fileReader = new FileReader();
+            string[] datas = fileReader.fileRead();
+            List<string> res = new List<string>();
+            foreach (var data in datas)
+            {
+                boolMatch = Regex.IsMatch(data, @"^" + str);
+                if (boolMatch)
+                {
+                    res.Add(data);
+                }
+                boolMatch = false;
+            }
+            return res;
+        }
     }
 }

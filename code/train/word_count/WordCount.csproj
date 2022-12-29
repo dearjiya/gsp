@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cmd.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="ICounter.cs" />
     <Compile Include="FileReader.cs" />
     <Compile Include="Grep.cs" />

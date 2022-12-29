@@ -10,11 +10,15 @@ namespace Train
     {
         None = 0,
         grep = 1,
+        ls = 2
     }
+
     class Command
     {
         public CommandType commandType = CommandType.None;
         public string[] commandArray;
+        public string commandStr;
+       
 
         public Command(string str)
         {
@@ -24,9 +28,11 @@ namespace Train
         void setCommand(string str)
         {
             char[] delimiters = new char[] { ' ', '\r', '\n' };
+            commandStr = str;
             commandArray = str.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
             commandType = (CommandType)Enum.Parse(typeof(CommandType), commandArray[0].ToString());
         }
+
     }
 
     public static class ExtensionMethods
